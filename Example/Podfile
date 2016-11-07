@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'PlaybuzzSDK_Example' do
+  pod 'PlaybuzzSDK', :path => '../'
+
+  target 'PlaybuzzSDK_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

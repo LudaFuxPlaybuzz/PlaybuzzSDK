@@ -1,0 +1,10 @@
+framework module PlaybuzzSDK {
+  umbrella header "PlaybuzzSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module PlaybuzzSDK.Swift {
+    header "PlaybuzzSDK-Swift.h"
+}

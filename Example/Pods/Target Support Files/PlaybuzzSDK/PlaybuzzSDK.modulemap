@@ -1,0 +1,6 @@
+framework module PlaybuzzSDK {
+  umbrella header "PlaybuzzSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
 This pod allows you to intergate Playbuzz quizes with just couple of lines. 
                        DESC
-  s.homepage         = 'https://github.com/LudaFuxPlaybuzzf/PlaybuzzSDK'
+  s.homepage         = 'https://github.com/LudaFuxPlaybuzz/playbuzz-ios-sdk'
 #s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Luda Fux' => 'luda@playbuzz.com' }

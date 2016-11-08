@@ -8,15 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		3AC2CF9C23386149F69E2B3636801677 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		4D984000A8588C93C265253C04F66860 /* PlaybuzzSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DE433F1B7E4106206B715E9F70C95F /* PlaybuzzSDK-dummy.m */; };
+		481983D83E45277621E289FA0A3CFC5A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		662745A44A9C913ED3024E7517D1056C /* Pods-PlaybuzzSDK_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 400FFD34B394C8614FA7D80F0EDB54F8 /* Pods-PlaybuzzSDK_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6F6B8BA7A9B29345AA445ED6F0E75409 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB6825DEBFFBD32229A39BF531BDCEA /* ReplaceMe.swift */; };
 		851EE64728872A19C9F224EA75F8E8D3 /* Pods-PlaybuzzSDK_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AFC7822E8AF97DAED300B771FB47D2AD /* Pods-PlaybuzzSDK_Example-dummy.m */; };
+		8B2D2C701F3A3B50E9AD9CD6623F4394 /* BlinkingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A240DF7F7913309FAC3F3B46B86DD7 /* BlinkingLabel.swift */; };
+		90AB58CBE30C828BD732D1A58D6763D7 /* PlaybuzzSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DE433F1B7E4106206B715E9F70C95F /* PlaybuzzSDK-dummy.m */; };
 		9E61EE03BCBD490AC3A5E7C193B0C6EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		AA9D5CC2C72126BB697F513D137F096F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		BE350BCF13B5480FF9E8D670E187EBFF /* Pods-PlaybuzzSDK_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D0341088C849E091BEDF98A5321735F2 /* Pods-PlaybuzzSDK_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D241E279CC6515737A8C08D503F563E8 /* PlaybuzzSDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 45D1DED219E3BC3B830D4864CDCAFBC1 /* PlaybuzzSDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DE3D8E7C22E7A51CAAD550096DB1ED21 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C37DD29DA0B31B859A8AE93915B131 /* ReplaceMe.swift */; };
 		ED3B3542CE5384DFAEA63B5918DA5BF9 /* Pods-PlaybuzzSDK_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F56E14607F12FADA96DEDE541053588D /* Pods-PlaybuzzSDK_Tests-dummy.m */; };
+		F6069425C582FCC944053A466F2C4FD2 /* PlaybuzzSDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 45D1DED219E3BC3B830D4864CDCAFBC1 /* PlaybuzzSDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,21 +25,20 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 607B055190A7D434DE63F4A864F9CC6B;
+			remoteGlobalIDString = BAA22D405595D03D05DE66892312B78E;
 			remoteInfo = PlaybuzzSDK;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0DDB018B082BB315D8F17C8F219E8610 /* Pods-PlaybuzzSDK_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PlaybuzzSDK_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		150D8EA3AF746495B08DD358DC43A4D2 /* PlaybuzzSDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = PlaybuzzSDK.modulemap; sourceTree = "<group>"; };
+		150D8EA3AF746495B08DD358DC43A4D2 /* PlaybuzzSDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = PlaybuzzSDK.modulemap; sourceTree = "<group>"; };
 		24305EA344A6646F58CF1555BBDE47AB /* Pods-PlaybuzzSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PlaybuzzSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		28C37DD29DA0B31B859A8AE93915B131 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
 		2DB806ED20234E2B4E708DE7C81F12AC /* Pods-PlaybuzzSDK_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PlaybuzzSDK_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3365AC1CF117B07F1C23BF2D2B974F3B /* Pods_PlaybuzzSDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlaybuzzSDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3365AC1CF117B07F1C23BF2D2B974F3B /* Pods_PlaybuzzSDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PlaybuzzSDK_Example.framework; path = "Pods-PlaybuzzSDK_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CEF8EA394C6EFE3D79FBDD3A65E9B38 /* Pods-PlaybuzzSDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PlaybuzzSDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		400FFD34B394C8614FA7D80F0EDB54F8 /* Pods-PlaybuzzSDK_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PlaybuzzSDK_Example-umbrella.h"; sourceTree = "<group>"; };
-		4131FCBF880B98618F8B8267E7D61277 /* PlaybuzzSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PlaybuzzSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4131FCBF880B98618F8B8267E7D61277 /* PlaybuzzSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PlaybuzzSDK.framework; path = PlaybuzzSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45D1DED219E3BC3B830D4864CDCAFBC1 /* PlaybuzzSDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PlaybuzzSDK-umbrella.h"; sourceTree = "<group>"; };
 		515AED367BE712FD349ACF9ADC231550 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54C620DD70A19D8AADB3AFF5322FD6F7 /* PlaybuzzSDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PlaybuzzSDK-prefix.pch"; sourceTree = "<group>"; };
@@ -47,21 +47,23 @@
 		7A73402CF138B04FFA54AFC0095E4533 /* Pods-PlaybuzzSDK_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PlaybuzzSDK_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		82DE433F1B7E4106206B715E9F70C95F /* PlaybuzzSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PlaybuzzSDK-dummy.m"; sourceTree = "<group>"; };
 		8B6EA06E483D8594499D6C098183E6B1 /* PlaybuzzSDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PlaybuzzSDK.xcconfig; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		988277EF8F6ACB9CFBC714402CE18B12 /* Pods-PlaybuzzSDK_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PlaybuzzSDK_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		A717F02D4B1856C7D2BBC95E76621D31 /* Pods-PlaybuzzSDK_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PlaybuzzSDK_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		ADB1DBD26F9D3D7D1350759C0616541D /* Pods-PlaybuzzSDK_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PlaybuzzSDK_Tests-resources.sh"; sourceTree = "<group>"; };
 		AFC7822E8AF97DAED300B771FB47D2AD /* Pods-PlaybuzzSDK_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PlaybuzzSDK_Example-dummy.m"; sourceTree = "<group>"; };
-		B284EDEF704728218CFCA3EE27C41F59 /* Pods-PlaybuzzSDK_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PlaybuzzSDK_Tests.modulemap"; sourceTree = "<group>"; };
+		B284EDEF704728218CFCA3EE27C41F59 /* Pods-PlaybuzzSDK_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-PlaybuzzSDK_Tests.modulemap"; sourceTree = "<group>"; };
+		B9A240DF7F7913309FAC3F3B46B86DD7 /* BlinkingLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BlinkingLabel.swift; sourceTree = "<group>"; };
 		C1193F95F2D31BA12DBF1784071680E8 /* Pods-PlaybuzzSDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PlaybuzzSDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CF1BD79214A3CF5376D4483E76052C85 /* Pods_PlaybuzzSDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlaybuzzSDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF1BD79214A3CF5376D4483E76052C85 /* Pods_PlaybuzzSDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PlaybuzzSDK_Tests.framework; path = "Pods-PlaybuzzSDK_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0341088C849E091BEDF98A5321735F2 /* Pods-PlaybuzzSDK_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PlaybuzzSDK_Tests-umbrella.h"; sourceTree = "<group>"; };
 		EA6D565EF62DACBD41FB06E995C0C088 /* Pods-PlaybuzzSDK_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PlaybuzzSDK_Example-frameworks.sh"; sourceTree = "<group>"; };
 		F1DB755DFB0856CC1D390C38C2869B1C /* Pods-PlaybuzzSDK_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PlaybuzzSDK_Example-resources.sh"; sourceTree = "<group>"; };
 		F2A37B239DAF20B3677B9B6040C71243 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F56E14607F12FADA96DEDE541053588D /* Pods-PlaybuzzSDK_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PlaybuzzSDK_Tests-dummy.m"; sourceTree = "<group>"; };
-		F6B4A7165765C432B28D33FB86D31EF8 /* Pods-PlaybuzzSDK_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PlaybuzzSDK_Example.modulemap"; sourceTree = "<group>"; };
+		F6B4A7165765C432B28D33FB86D31EF8 /* Pods-PlaybuzzSDK_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-PlaybuzzSDK_Example.modulemap"; sourceTree = "<group>"; };
+		FAB6825DEBFFBD32229A39BF531BDCEA /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,19 +75,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		97C43378FE0AD6B05AD64945A548CF88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				481983D83E45277621E289FA0A3CFC5A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ACB2934840FEB9F21683E9B3D689AAAE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9E61EE03BCBD490AC3A5E7C193B0C6EB /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D39CC897BFE34ECDE199361E761CD205 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AA9D5CC2C72126BB697F513D137F096F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,7 +174,7 @@
 		6D52471846EB24F30B0E1FEFE5E14F11 /* PlaybuzzSDK */ = {
 			isa = PBXGroup;
 			children = (
-				9AEE925DC5273642CE41BB58035F8E7B /* PlaybuzzSDK */,
+				A6E4E78DB1B4398338F887A81AEA5E25 /* PlaybuzzSDK */,
 				2107CA69F24D7D422A9213C1771CFDE9 /* Support Files */,
 			);
 			name = PlaybuzzSDK;
@@ -187,6 +189,16 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		7B2C2DCC59B4A73DE7C319D26516B749 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B9A240DF7F7913309FAC3F3B46B86DD7 /* BlinkingLabel.swift */,
+				FAB6825DEBFFBD32229A39BF531BDCEA /* ReplaceMe.swift */,
+			);
+			name = Classes;
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
@@ -198,20 +210,13 @@
 			);
 			sourceTree = "<group>";
 		};
-		9AEE925DC5273642CE41BB58035F8E7B /* PlaybuzzSDK */ = {
+		A6E4E78DB1B4398338F887A81AEA5E25 /* PlaybuzzSDK */ = {
 			isa = PBXGroup;
 			children = (
-				9D06784E68B8FD99CCB9471C1D3DF995 /* Classes */,
+				7B2C2DCC59B4A73DE7C319D26516B749 /* Classes */,
 			);
+			name = PlaybuzzSDK;
 			path = PlaybuzzSDK;
-			sourceTree = "<group>";
-		};
-		9D06784E68B8FD99CCB9471C1D3DF995 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				28C37DD29DA0B31B859A8AE93915B131 /* ReplaceMe.swift */,
-			);
-			path = Classes;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -241,11 +246,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ABFF599E5C38ED5EA2C99BCDCFD92F34 /* Headers */ = {
+		FD503478B9768227C8649336E1E199E5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D241E279CC6515737A8C08D503F563E8 /* PlaybuzzSDK-umbrella.h in Headers */,
+				F6069425C582FCC944053A466F2C4FD2 /* PlaybuzzSDK-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,13 +274,13 @@
 			productReference = CF1BD79214A3CF5376D4483E76052C85 /* Pods_PlaybuzzSDK_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		607B055190A7D434DE63F4A864F9CC6B /* PlaybuzzSDK */ = {
+		BAA22D405595D03D05DE66892312B78E /* PlaybuzzSDK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1A2DF791FB07539778A05918FDA02788 /* Build configuration list for PBXNativeTarget "PlaybuzzSDK" */;
+			buildConfigurationList = 5F5D9F6BC87644E59E4B06FF67CAD1E8 /* Build configuration list for PBXNativeTarget "PlaybuzzSDK" */;
 			buildPhases = (
-				840FFDD7C71859122A070605C1F4AAD3 /* Sources */,
-				D39CC897BFE34ECDE199361E761CD205 /* Frameworks */,
-				ABFF599E5C38ED5EA2C99BCDCFD92F34 /* Headers */,
+				EC318B511BE2886A9C6720C23754A39C /* Sources */,
+				97C43378FE0AD6B05AD64945A548CF88 /* Frameworks */,
+				FD503478B9768227C8649336E1E199E5 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -312,14 +317,6 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
-				TargetAttributes = {
-					607B055190A7D434DE63F4A864F9CC6B = {
-						LastSwiftMigration = 0810;
-					};
-					D25B17968D7054D6F03ACFFDA5C55595 = {
-						LastSwiftMigration = 0810;
-					};
-				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -333,7 +330,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				607B055190A7D434DE63F4A864F9CC6B /* PlaybuzzSDK */,
+				BAA22D405595D03D05DE66892312B78E /* PlaybuzzSDK */,
 				D25B17968D7054D6F03ACFFDA5C55595 /* Pods-PlaybuzzSDK_Example */,
 				36A2C3016B0E55D22B25C806293CB2A3 /* Pods-PlaybuzzSDK_Tests */,
 			);
@@ -341,20 +338,21 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		840FFDD7C71859122A070605C1F4AAD3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4D984000A8588C93C265253C04F66860 /* PlaybuzzSDK-dummy.m in Sources */,
-				DE3D8E7C22E7A51CAAD550096DB1ED21 /* ReplaceMe.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		BF449BB8BD2CD1ADF4982E8CD608DFE6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				851EE64728872A19C9F224EA75F8E8D3 /* Pods-PlaybuzzSDK_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC318B511BE2886A9C6720C23754A39C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B2D2C701F3A3B50E9AD9CD6623F4394 /* BlinkingLabel.swift in Sources */,
+				90AB58CBE30C828BD732D1A58D6763D7 /* PlaybuzzSDK-dummy.m in Sources */,
+				6F6B8BA7A9B29345AA445ED6F0E75409 /* ReplaceMe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,7 +370,7 @@
 		FD6351482208AB02B8A99071D956DAAE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = PlaybuzzSDK;
-			target = 607B055190A7D434DE63F4A864F9CC6B /* PlaybuzzSDK */;
+			target = BAA22D405595D03D05DE66892312B78E /* PlaybuzzSDK */;
 			targetProxy = 196DC13344F1601AE5FCB2FD827F01D0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -408,7 +406,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -450,38 +447,6 @@
 			};
 			name = Debug;
 		};
-		699F1B54594741BDE20273E79868F2D2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8B6EA06E483D8594499D6C098183E6B1 /* PlaybuzzSDK.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/PlaybuzzSDK/PlaybuzzSDK-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PlaybuzzSDK/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PlaybuzzSDK/PlaybuzzSDK.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = PlaybuzzSDK;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		72BECBFB3A9CEDA8743D7456BE744D5C /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7033CBB380606B89294711AE19238216 /* Pods-PlaybuzzSDK_Example.release.xcconfig */;
@@ -511,7 +476,6 @@
 				PRODUCT_NAME = Pods_PlaybuzzSDK_Example;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -557,6 +521,39 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
+		};
+		95C5AFC5D51218978D66392CDD54109D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B6EA06E483D8594499D6C098183E6B1 /* PlaybuzzSDK.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PlaybuzzSDK/PlaybuzzSDK-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PlaybuzzSDK/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PlaybuzzSDK/PlaybuzzSDK.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = PlaybuzzSDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		9E1E4E48AF2EAB23169E611BF694090A /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -637,7 +634,7 @@
 			};
 			name = Release;
 		};
-		E321897427C919D08FDA42B79C9FE514 /* Debug */ = {
+		D4B61A33312B56067C45C864A411C2FB /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8B6EA06E483D8594499D6C098183E6B1 /* PlaybuzzSDK.xcconfig */;
 			buildSettings = {
@@ -645,7 +642,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -658,30 +655,20 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/PlaybuzzSDK/PlaybuzzSDK.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = PlaybuzzSDK;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1A2DF791FB07539778A05918FDA02788 /* Build configuration list for PBXNativeTarget "PlaybuzzSDK" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E321897427C919D08FDA42B79C9FE514 /* Debug */,
-				699F1B54594741BDE20273E79868F2D2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -696,6 +683,15 @@
 			buildConfigurations = (
 				5C1C9E4B12AD2F4CFDAA9ED2E1C2E0E6 /* Debug */,
 				CEC7CBB17D6CFAC2C2D5CF7D8615173F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F5D9F6BC87644E59E4B06FF67CAD1E8 /* Build configuration list for PBXNativeTarget "PlaybuzzSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95C5AFC5D51218978D66392CDD54109D /* Debug */,
+				D4B61A33312B56067C45C864A411C2FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

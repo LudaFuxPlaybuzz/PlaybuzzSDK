@@ -1,20 +1,21 @@
 {
   "name": "PlaybuzzSDK",
   "version": "0.1.0",
-  "summary": "A short description of PlaybuzzSDK.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/PlaybuzzSDK",
+  "summary": "Embed your our Playbuzz quiz via PlaybuzzSDK.",
+  "description": "This pod allows you to intergate Playbuzz quizes with just couple of lines.",
+  "homepage": "https://github.com/LudaFuxPlaybuzz/playbuzz-ios-sdk",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "Luda Fux": "fuxlud@gmail.com"
+    "Luda Fux": "luda@playbuzz.com"
   },
   "source": {
     "git": "https://github.com/<GITHUB_USERNAME>/PlaybuzzSDK.git",
     "tag": "0.1.0"
   },
+  "social_media_url": "https://www.facebook.com/playbuzz/",
   "platforms": {
     "ios": "8.0"
   },

@@ -10,11 +10,13 @@
 		1529ADEE153BC5A5FB87028A /* Pods_PlaybuzzSDK_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5690EA35D2590F29843DF26B /* Pods_PlaybuzzSDK_Example.framework */; };
 		36CC10716D7543651A74457C /* Pods_PlaybuzzSDK_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9764BAC54BABE8406E064F0 /* Pods_PlaybuzzSDK_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		855ADA661DD1CB27003A4342 /* PlaybuzzWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855ADA631DD1CB27003A4342 /* PlaybuzzWebView.swift */; };
+		855ADA671DD1CB27003A4342 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855ADA641DD1CB27003A4342 /* SettingsTableViewController.swift */; };
+		855ADA681DD1CB27003A4342 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855ADA651DD1CB27003A4342 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,13 +36,15 @@
 		607FACD01AFB9204008FA782 /* PlaybuzzSDK_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaybuzzSDK_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* PlaybuzzSDK_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaybuzzSDK_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		855ADA631DD1CB27003A4342 /* PlaybuzzWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybuzzWebView.swift; sourceTree = "<group>"; };
+		855ADA641DD1CB27003A4342 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		855ADA651DD1CB27003A4342 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		890E2C1DF6DA06F8F4F070F4 /* PlaybuzzSDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = PlaybuzzSDK.podspec; path = ../PlaybuzzSDK.podspec; sourceTree = "<group>"; };
 		BA5307E796A9B3E0197C7D6F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		DDDB5ED54D7C9CF74CC0C601 /* Pods-PlaybuzzSDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaybuzzSDK_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlaybuzzSDK_Tests/Pods-PlaybuzzSDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -105,7 +109,9 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				855ADA631DD1CB27003A4342 /* PlaybuzzWebView.swift */,
+				855ADA641DD1CB27003A4342 /* SettingsTableViewController.swift */,
+				855ADA651DD1CB27003A4342 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -362,8 +368,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				855ADA661DD1CB27003A4342 /* PlaybuzzWebView.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				855ADA681DD1CB27003A4342 /* ViewController.swift in Sources */,
+				855ADA671DD1CB27003A4342 /* SettingsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

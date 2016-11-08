@@ -1,44 +1,61 @@
 //
 //  ViewController.swift
-//  PlaybuzzSDK
+//  PlaybuzzWebView
 //
-//  Created by Luda Fux on 11/07/2016.
-//  Copyright (c) 2016 Luda Fux. All rights reserved.
+//  Created by Luda Fux on 8/8/16.
+//  Copyright © 2016 Playbuzz. All rights reserved.
 //
 
 import UIKit
-import PlaybuzzSDK
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, PlaybuzzWebViewProtocol, SettingsTableViewControllerProtocol{
     
-    var isBlinking = false
-    let blinkingLabel = BlinkingLabel(frame: CGRect(x: 10, y: 20, width: 200, height: 30))
+    @IBOutlet weak var webViewConstraint: NSLayoutConstraint!
+    @IBOutlet weak var containerHeight: NSLayoutConstraint!
+    @IBOutlet weak var playbuzzView: PlaybuzzWebView!
+    
+    static var showRecommendations = true
+    static var showShareButton = true
+    static var showFacebookComments = true
+    static var showItemInfo = true
+    
+    let itemAlias = "shpaltman/10-best-commercials-for-the-olympic-games-rio-2016"
+    let userID = UIDevice.current.identifierForVendor!.uuidString
+    let companyDomain = "http://www.playbuzz.com"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Setup the BlinkingLabel
-        blinkingLabel.text = "I blink!"
-        blinkingLabel.font = UIFont.systemFont(ofSize: 20)
-        view.addSubview(blinkingLabel)
-        blinkingLabel.startBlinking()
-        isBlinking = true
-        
-        // Create a UIButton to toggle the blinking
-        let toggleButton = UIButton(frame: CGRect(x: 10, y: 60, width: 125, height: 35))
-        toggleButton.setTitle("Toggle Blinking", for: .normal)
-        toggleButton.setTitleColor(UIColor.red, for: .normal)
-        toggleButton.addTarget(self, action: #selector(ViewController.toggleBlinking), for: .touchUpInside)
-        view.addSubview(toggleButton)
+        playbuzzView.delegate = self
     }
     
-    func toggleBlinking() {
-        if (isBlinking) {
-            blinkingLabel.stopBlinking()
-        } else {
-            blinkingLabel.startBlinking()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.reloadItem()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!)
+    {
+        if let viewController = segue.destination as? SettingsTableViewController
+        {
+            viewController.delegate = self
         }
-        isBlinking = !isBlinking
     }
     
+    //MARK: PlaybuzzWebView Protocol
+    func resizePlaybuzzContainer(_ height: CGFloat){
+        webViewConstraint.constant = height
+        containerHeight.constant = playbuzzView.frame.origin.y + height
+    }
+    
+    func reloadItem()
+    {
+        playbuzzView.reloadItem(userID,
+                                itemAlias: itemAlias,
+                                showRecommendations: ViewController.showRecommendations,
+                                showShareButton: ViewController.showShareButton,
+                                showFacebookComments: ViewController.showFacebookComments,
+                                showItemInfo: ViewController.showItemInfo,
+                                companyDomain: companyDomain)
+    }
 }
+

@@ -67,7 +67,8 @@ class PlaybuzzWebView: UIView, WKScriptMessageHandler{//, WKNavigationDelegate, 
                                          showShareButton ? "true":"false",
                                          showFacebookComments ? "true":"false",
                                          showItemInfo ? "true":"false")
-        webView.loadHTMLString(embedString, baseURL: URL(string:companyDomain))
+        print(embedString)
+        webView.loadHTMLString(embedString, baseURL: URL(string:companyDomain))        
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?)

@@ -19,6 +19,10 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod "PlaybuzzSDK"
 ```
+## Setup
+
+To make Playbuzz work, you need to enable **Allow Arbitrary Loads** in **App Transport Security Settings** in your Info.plist
+![plist](http://i68.tinypic.com/286wzet.png)
 
 ## Author
 

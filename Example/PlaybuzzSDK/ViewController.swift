@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import PlaybuzzSDK
 
 class ViewController: UIViewController, PlaybuzzWebViewProtocol, SettingsTableViewControllerProtocol{
     
     @IBOutlet weak var webViewConstraint: NSLayoutConstraint!
     @IBOutlet weak var containerHeight: NSLayoutConstraint!
     @IBOutlet weak var playbuzzView: PlaybuzzWebView!
+    @IBOutlet weak var viewsContainer: UIView!
     
     static var showRecommendations = true
     static var showShareButton = true
@@ -23,6 +25,8 @@ class ViewController: UIViewController, PlaybuzzWebViewProtocol, SettingsTableVi
     let userID = UIDevice.current.identifierForVendor!.uuidString
     let companyDomain = "http://www.playbuzz.com"
     
+//    let playbuzzQuiz = PlaybuzzQuiz(frame: CGRect(x: 20, y: 300, width: 400, height: 200))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         playbuzzView.delegate = self
@@ -31,6 +35,7 @@ class ViewController: UIViewController, PlaybuzzWebViewProtocol, SettingsTableVi
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.reloadItem()
+//        viewsContainer.addSubview(playbuzzQuiz)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!)

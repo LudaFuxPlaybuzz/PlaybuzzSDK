@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'BAA22D405595D03D05DE66892312B78E'
+               BlueprintIdentifier = '607B055190A7D434DE63F4A864F9CC6B'
                BlueprintName = 'PlaybuzzSDK'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'PlaybuzzSDK.framework'>

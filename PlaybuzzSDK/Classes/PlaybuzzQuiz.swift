@@ -12,7 +12,7 @@ import WebKit
 public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
 
     var webView: WKWebView!
-    weak var delegate: PlaybuzzWebViewProtocol?
+    public weak var delegate: PlaybuzzQuizProtocol?
 
     public override init(frame: CGRect)
     {
@@ -91,7 +91,7 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
 
 
 // MARK: - EmbededWebViewControllerProtocol
-protocol PlaybuzzWebViewProtocol: class
+public protocol PlaybuzzQuizProtocol: class
 {
     func resizePlaybuzzContainer(_ height: CGFloat)
 }

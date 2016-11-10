@@ -26,21 +26,9 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dAn-KV-CtT" userLabel="Container View">
                                         <rect key="frame" x="0.0" y="10" width="375" height="750"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fLL-Dt-3JE" userLabel="Playbuzz Web View" customClass="PlaybuzzWebView" customModule="PlaybuzzSDK_Example" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="750" id="XWW-Hy-fuV"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="750" id="6le-nC-LMF"/>
-                                            <constraint firstItem="fLL-Dt-3JE" firstAttribute="leading" secondItem="dAn-KV-CtT" secondAttribute="leading" id="Crg-eP-Oo6"/>
-                                            <constraint firstAttribute="bottom" secondItem="fLL-Dt-3JE" secondAttribute="bottom" id="ttW-Mf-v89"/>
-                                            <constraint firstItem="fLL-Dt-3JE" firstAttribute="top" secondItem="dAn-KV-CtT" secondAttribute="top" id="vF4-Yg-509"/>
-                                            <constraint firstAttribute="trailing" secondItem="fLL-Dt-3JE" secondAttribute="trailing" id="zDJ-x4-zqd"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -67,9 +55,7 @@
                     <size key="freeformSize" width="375" height="750"/>
                     <connections>
                         <outlet property="containerHeight" destination="6le-nC-LMF" id="wqR-C5-iAY"/>
-                        <outlet property="playbuzzView" destination="fLL-Dt-3JE" id="nXL-vg-Lqm"/>
                         <outlet property="viewsContainer" destination="dAn-KV-CtT" id="dR6-h6-HRk"/>
-                        <outlet property="webViewConstraint" destination="XWW-Hy-fuV" id="JPe-5t-Lug"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hou-7Z-8sc" sceneMemberID="firstResponder"/>

@@ -9,30 +9,19 @@
 import UIKit
 import PlaybuzzSDK
 
-class ViewController: UIViewController, PlaybuzzWebViewProtocol{
+class ViewController: UIViewController, PlaybuzzQuizProtocol{
     
-    @IBOutlet weak var webViewConstraint: NSLayoutConstraint!
     @IBOutlet weak var containerHeight: NSLayoutConstraint!
-    @IBOutlet weak var playbuzzView: PlaybuzzWebView!
     @IBOutlet weak var viewsContainer: UIView!
     
-    let playbuzzQuiz = PlaybuzzQuiz(frame: CGRect(x: 8, y: 300, width: 400, height: 200))
+    let playbuzzQuiz = PlaybuzzQuiz(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        playbuzzView.delegate = self
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        
+        self.playbuzzQuiz.delegate = self
         self.reloadItem()
-//        viewsContainer.addSubview(playbuzzQuiz)
-    }
-    
-    //MARK: PlaybuzzWebView Protocol
-    func resizePlaybuzzContainer(_ height: CGFloat){
-        webViewConstraint.constant = height
-        containerHeight.constant = height
+        viewsContainer.addSubview(playbuzzQuiz)
     }
     
     func reloadItem()
@@ -54,14 +43,11 @@ class ViewController: UIViewController, PlaybuzzWebViewProtocol{
                                 showFacebookComments: showFacebookComments,
                                 showItemInfo: showItemInfo,
                                 companyDomain: companyDomain)
-        
-        playbuzzView.reloadItem(userID,
-                                itemAlias: itemAlias,
-                                showRecommendations: showRecommendations,
-                                showShareButton: showShareButton,
-                                showFacebookComments: showFacebookComments,
-                                showItemInfo: showItemInfo,
-                                companyDomain: companyDomain)
+    }
+    
+    //MARK: PlaybuzzWebView Protocol
+    func resizePlaybuzzContainer(_ height: CGFloat){
+        containerHeight.constant = height
     }
 }
 

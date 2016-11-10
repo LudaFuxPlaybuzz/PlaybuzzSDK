@@ -35,7 +35,7 @@ class ViewController: UIViewController, PlaybuzzWebViewProtocol, SettingsTableVi
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.reloadItem()
-        viewsContainer.addSubview(playbuzzQuiz)
+//        viewsContainer.addSubview(playbuzzQuiz)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!)
@@ -49,7 +49,7 @@ class ViewController: UIViewController, PlaybuzzWebViewProtocol, SettingsTableVi
     //MARK: PlaybuzzWebView Protocol
     func resizePlaybuzzContainer(_ height: CGFloat){
         webViewConstraint.constant = height
-        containerHeight.constant = 600 + height
+        containerHeight.constant = height
     }
     
     func reloadItem()

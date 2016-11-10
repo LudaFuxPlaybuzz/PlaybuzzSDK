@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dAn-KV-CtT" userLabel="Container View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
+                                        <rect key="frame" x="0.0" y="10" width="375" height="750"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fLL-Dt-3JE" userLabel="Playbuzz Web View" customClass="PlaybuzzWebView" customModule="PlaybuzzSDK_Example" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
@@ -46,7 +46,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="dAn-KV-CtT" firstAttribute="leading" secondItem="e52-GY-yYT" secondAttribute="leading" id="ZmE-DF-r0v"/>
-                                    <constraint firstItem="dAn-KV-CtT" firstAttribute="top" secondItem="e52-GY-yYT" secondAttribute="top" id="fgF-EA-nrt"/>
+                                    <constraint firstItem="dAn-KV-CtT" firstAttribute="top" secondItem="e52-GY-yYT" secondAttribute="top" constant="10" id="fgF-EA-nrt"/>
                                     <constraint firstAttribute="trailing" secondItem="dAn-KV-CtT" secondAttribute="trailing" id="gtk-WR-R4j"/>
                                     <constraint firstAttribute="bottom" secondItem="dAn-KV-CtT" secondAttribute="bottom" id="gxP-11-07q"/>
                                 </constraints>

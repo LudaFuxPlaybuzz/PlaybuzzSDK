@@ -25,7 +25,7 @@ class ViewController: UIViewController, PlaybuzzWebViewProtocol, SettingsTableVi
     let userID = UIDevice.current.identifierForVendor!.uuidString
     let companyDomain = "http://www.playbuzz.com"
     
-    let playbuzzQuiz = PlaybuzzQuiz(frame: CGRect(x: 20, y: 300, width: 400, height: 200))
+    let playbuzzQuiz = PlaybuzzQuiz(frame: CGRect(x: 8, y: 300, width: 400, height: 200))
     
     override func viewDidLoad() {
         super.viewDidLoad()

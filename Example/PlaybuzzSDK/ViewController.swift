@@ -25,7 +25,7 @@ class ViewController: UIViewController, PlaybuzzWebViewProtocol, SettingsTableVi
     let userID = UIDevice.current.identifierForVendor!.uuidString
     let companyDomain = "http://www.playbuzz.com"
     
-//    let playbuzzQuiz = PlaybuzzQuiz(frame: CGRect(x: 20, y: 300, width: 400, height: 200))
+    let playbuzzQuiz = PlaybuzzQuiz(frame: CGRect(x: 20, y: 300, width: 400, height: 200))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,7 @@ class ViewController: UIViewController, PlaybuzzWebViewProtocol, SettingsTableVi
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.reloadItem()
-//        viewsContainer.addSubview(playbuzzQuiz)
+        viewsContainer.addSubview(playbuzzQuiz)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!)
@@ -48,13 +48,20 @@ class ViewController: UIViewController, PlaybuzzWebViewProtocol, SettingsTableVi
     
     //MARK: PlaybuzzWebView Protocol
     func resizePlaybuzzContainer(_ height: CGFloat){
-        print(height)
         webViewConstraint.constant = height
         containerHeight.constant = 600 + height
     }
     
     func reloadItem()
     {
+        playbuzzQuiz.reloadItem(userID,
+                                itemAlias: itemAlias,
+                                showRecommendations: ViewController.showRecommendations,
+                                showShareButton: ViewController.showShareButton,
+                                showFacebookComments: ViewController.showFacebookComments,
+                                showItemInfo: ViewController.showItemInfo,
+                                companyDomain: companyDomain)
+        
         playbuzzView.reloadItem(userID,
                                 itemAlias: itemAlias,
                                 showRecommendations: ViewController.showRecommendations,

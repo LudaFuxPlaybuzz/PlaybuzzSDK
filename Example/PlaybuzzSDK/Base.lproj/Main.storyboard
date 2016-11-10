@@ -35,30 +35,15 @@
                         <viewControllerLayoutGuide type="bottom" id="Ylg-hO-eRU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="P0T-VP-6BM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e52-GY-yYT">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dAn-KV-CtT" userLabel="Container View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fLL-Dt-3JE" userLabel="Playbuzz Web View" customClass="PlaybuzzWebView" customModule="PlaybuzzSDK_Example" customModuleProvider="target">
-                                                <rect key="frame" x="8" y="261" width="359" height="332"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="510" id="azu-EE-LhM"/>
-                                                    <constraint firstAttribute="height" constant="367" id="cGm-pE-4FW"/>
-                                                    <constraint firstAttribute="height" constant="505" id="iRu-Df-mkQ"/>
-                                                </constraints>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="azu-EE-LhM"/>
-                                                        <exclude reference="cGm-pE-4FW"/>
-                                                        <exclude reference="iRu-Df-mkQ"/>
-                                                    </mask>
-                                                </variation>
-                                            </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your great article " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rEq-h3-xIz">
                                                 <rect key="frame" x="8" y="25" width="196" height="24"/>
                                                 <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="21"/>
@@ -72,18 +57,34 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fLL-Dt-3JE" userLabel="Playbuzz Web View" customClass="PlaybuzzWebView" customModule="PlaybuzzSDK_Example" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="260.5" width="359" height="200"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="Hvl-OL-Tbg"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7E-Qy-mLl">
+                                                <rect key="frame" x="8" y="468.5" width="359" height="193.5"/>
+                                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+                                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="X7E-Qy-mLl" secondAttribute="trailing" constant="8" id="62m-mF-ZLg"/>
                                             <constraint firstItem="raK-QR-cIO" firstAttribute="top" secondItem="rEq-h3-xIz" secondAttribute="bottom" constant="10" id="6fX-iE-jg6"/>
-                                            <constraint firstAttribute="height" constant="600" id="6le-nC-LMF"/>
+                                            <constraint firstAttribute="height" constant="750" id="6le-nC-LMF"/>
                                             <constraint firstItem="fLL-Dt-3JE" firstAttribute="top" secondItem="raK-QR-cIO" secondAttribute="bottom" constant="8" id="8uB-sf-H9c"/>
+                                            <constraint firstItem="X7E-Qy-mLl" firstAttribute="leading" secondItem="dAn-KV-CtT" secondAttribute="leading" constant="8" id="E7b-Iv-UFX"/>
+                                            <constraint firstItem="X7E-Qy-mLl" firstAttribute="top" secondItem="fLL-Dt-3JE" secondAttribute="bottom" constant="8" id="JN2-Kk-u2Y"/>
                                             <constraint firstAttribute="trailing" secondItem="fLL-Dt-3JE" secondAttribute="trailing" constant="8" id="KVe-cz-omS"/>
                                             <constraint firstItem="rEq-h3-xIz" firstAttribute="top" secondItem="dAn-KV-CtT" secondAttribute="top" constant="25" id="MTM-Fv-Msh"/>
                                             <constraint firstAttribute="trailing" secondItem="raK-QR-cIO" secondAttribute="trailing" constant="8" id="O8S-tC-ASV"/>
-                                            <constraint firstAttribute="bottom" secondItem="fLL-Dt-3JE" secondAttribute="bottom" constant="7" id="Z9Q-Av-i7V"/>
                                             <constraint firstItem="fLL-Dt-3JE" firstAttribute="leading" secondItem="dAn-KV-CtT" secondAttribute="leading" constant="8" id="jJw-8p-AXj"/>
                                             <constraint firstItem="rEq-h3-xIz" firstAttribute="leading" secondItem="dAn-KV-CtT" secondAttribute="leading" constant="8" id="uwm-O1-MQF"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="X7E-Qy-mLl" secondAttribute="bottom" constant="8" id="w6s-iL-oZS"/>
                                             <constraint firstItem="raK-QR-cIO" firstAttribute="leading" secondItem="dAn-KV-CtT" secondAttribute="leading" constant="8" id="zCI-aB-hS2"/>
                                         </constraints>
                                     </view>
@@ -113,11 +114,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="750"/>
                     <connections>
                         <outlet property="containerHeight" destination="6le-nC-LMF" id="wqR-C5-iAY"/>
                         <outlet property="playbuzzView" destination="fLL-Dt-3JE" id="nXL-vg-Lqm"/>
                         <outlet property="viewsContainer" destination="dAn-KV-CtT" id="dR6-h6-HRk"/>
-                        <outlet property="webViewConstraint" destination="azu-EE-LhM" id="Msd-3o-1CC"/>
+                        <outlet property="webViewConstraint" destination="Hvl-OL-Tbg" id="Y3J-X3-zIx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hou-7Z-8sc" sceneMemberID="firstResponder"/>
@@ -129,7 +132,7 @@
             <objects>
                 <tableViewController id="jG9-2n-zQt" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Dqe-b3-HjR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>

@@ -67,7 +67,6 @@ class PlaybuzzWebView: UIView, WKScriptMessageHandler{//, WKNavigationDelegate, 
                                          showShareButton ? "true":"false",
                                          showFacebookComments ? "true":"false",
                                          showItemInfo ? "true":"false")
-        print(embedString)
         webView.loadHTMLString(embedString, baseURL: URL(string:companyDomain))        
     }
     

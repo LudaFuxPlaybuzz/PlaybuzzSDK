@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PlaybuzzSDK/PlaybuzzWebView.swift"
-            timestampString = "500301047.508687"
+            filePath = "PlaybuzzSDK/ViewController.swift"
+            timestampString = "500461624.525529"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "reloadItem(_:itemAlias:showRecommendations:showShareButton:showFacebookComments:showItemInfo:companyDomain:)"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "resizePlaybuzzContainer(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

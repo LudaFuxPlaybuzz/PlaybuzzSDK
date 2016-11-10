@@ -48,8 +48,9 @@ class ViewController: UIViewController, PlaybuzzWebViewProtocol, SettingsTableVi
     
     //MARK: PlaybuzzWebView Protocol
     func resizePlaybuzzContainer(_ height: CGFloat){
+        print(height)
         webViewConstraint.constant = height
-        containerHeight.constant = playbuzzView.frame.origin.y + height
+        containerHeight.constant = 600 + height
     }
     
     func reloadItem()

@@ -26,9 +26,19 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dAn-KV-CtT" userLabel="Container View">
                                         <rect key="frame" x="0.0" y="10" width="375" height="750"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oxq-FD-2fw" customClass="PlaybuzzQuiz" customModule="PlaybuzzSDK">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="750" id="6le-nC-LMF"/>
+                                            <constraint firstAttribute="trailing" secondItem="Oxq-FD-2fw" secondAttribute="trailing" id="Kif-ea-L4T"/>
+                                            <constraint firstAttribute="bottom" secondItem="Oxq-FD-2fw" secondAttribute="bottom" id="cwQ-Ha-nRp"/>
+                                            <constraint firstItem="Oxq-FD-2fw" firstAttribute="top" secondItem="dAn-KV-CtT" secondAttribute="top" id="fIv-mQ-FaW"/>
+                                            <constraint firstItem="Oxq-FD-2fw" firstAttribute="leading" secondItem="dAn-KV-CtT" secondAttribute="leading" id="quz-3c-fyJ"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -55,6 +65,7 @@
                     <size key="freeformSize" width="375" height="750"/>
                     <connections>
                         <outlet property="containerHeight" destination="6le-nC-LMF" id="wqR-C5-iAY"/>
+                        <outlet property="playbuzzQuiz" destination="Oxq-FD-2fw" id="EgW-NO-OhN"/>
                         <outlet property="viewsContainer" destination="dAn-KV-CtT" id="dR6-h6-HRk"/>
                     </connections>
                 </viewController>

@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Embeding Playbuzz on iOS-->
+        <!--View Controller-->
         <scene sceneID="xF8-Tl-v8y">
             <objects>
                 <viewController id="OuK-VP-YAr" customClass="ViewController" customModule="PlaybuzzSDK_Example" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,51 +22,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e52-GY-yYT">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
+                                <rect key="frame" x="0.0" y="10" width="375" height="740"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dAn-KV-CtT" userLabel="Container View">
-                                        <rect key="frame" x="0.0" y="10" width="375" height="750"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oxq-FD-2fw" customClass="PlaybuzzQuiz" customModule="PlaybuzzSDK">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </view>
-                                        </subviews>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oxq-FD-2fw" customClass="PlaybuzzQuiz" customModule="PlaybuzzSDK">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="740"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="750" id="6le-nC-LMF"/>
-                                            <constraint firstAttribute="trailing" secondItem="Oxq-FD-2fw" secondAttribute="trailing" id="Kif-ea-L4T"/>
-                                            <constraint firstAttribute="bottom" secondItem="Oxq-FD-2fw" secondAttribute="bottom" id="cwQ-Ha-nRp"/>
-                                            <constraint firstItem="Oxq-FD-2fw" firstAttribute="top" secondItem="dAn-KV-CtT" secondAttribute="top" id="fIv-mQ-FaW"/>
-                                            <constraint firstItem="Oxq-FD-2fw" firstAttribute="leading" secondItem="dAn-KV-CtT" secondAttribute="leading" id="quz-3c-fyJ"/>
+                                            <constraint firstAttribute="height" constant="740" id="PcN-UK-8Uz"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="dAn-KV-CtT" firstAttribute="leading" secondItem="e52-GY-yYT" secondAttribute="leading" id="ZmE-DF-r0v"/>
-                                    <constraint firstItem="dAn-KV-CtT" firstAttribute="top" secondItem="e52-GY-yYT" secondAttribute="top" constant="10" id="fgF-EA-nrt"/>
-                                    <constraint firstAttribute="trailing" secondItem="dAn-KV-CtT" secondAttribute="trailing" id="gtk-WR-R4j"/>
-                                    <constraint firstAttribute="bottom" secondItem="dAn-KV-CtT" secondAttribute="bottom" id="gxP-11-07q"/>
+                                    <constraint firstAttribute="trailing" secondItem="Oxq-FD-2fw" secondAttribute="trailing" id="Ehm-yj-CyH"/>
+                                    <constraint firstAttribute="bottom" secondItem="Oxq-FD-2fw" secondAttribute="bottom" id="bBl-y3-X0v"/>
+                                    <constraint firstItem="Oxq-FD-2fw" firstAttribute="top" secondItem="e52-GY-yYT" secondAttribute="top" id="h1S-UU-mA7"/>
+                                    <constraint firstItem="Oxq-FD-2fw" firstAttribute="leading" secondItem="e52-GY-yYT" secondAttribute="leading" id="xF5-ya-6UX"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Oxq-FD-2fw" firstAttribute="width" secondItem="P0T-VP-6BM" secondAttribute="width" id="2ho-AG-JEw"/>
                             <constraint firstAttribute="trailing" secondItem="e52-GY-yYT" secondAttribute="trailing" id="9Qf-kv-3XU"/>
-                            <constraint firstItem="e52-GY-yYT" firstAttribute="top" secondItem="P0T-VP-6BM" secondAttribute="top" id="M9x-PN-lsc"/>
+                            <constraint firstItem="e52-GY-yYT" firstAttribute="top" secondItem="P0T-VP-6BM" secondAttribute="top" constant="10" id="M9x-PN-lsc"/>
                             <constraint firstItem="e52-GY-yYT" firstAttribute="leading" secondItem="P0T-VP-6BM" secondAttribute="leading" id="agA-r9-TMm"/>
-                            <constraint firstItem="dAn-KV-CtT" firstAttribute="width" secondItem="P0T-VP-6BM" secondAttribute="width" id="dKS-MB-SXl"/>
                             <constraint firstItem="Ylg-hO-eRU" firstAttribute="top" secondItem="e52-GY-yYT" secondAttribute="bottom" id="zeY-ul-k0n"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Embeding Playbuzz on iOS" id="AYf-2j-11e"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="750"/>
                     <connections>
-                        <outlet property="containerHeight" destination="6le-nC-LMF" id="wqR-C5-iAY"/>
-                        <outlet property="playbuzzQuiz" destination="Oxq-FD-2fw" id="EgW-NO-OhN"/>
-                        <outlet property="viewsContainer" destination="dAn-KV-CtT" id="dR6-h6-HRk"/>
+                        <outlet property="playbuzzQuiz" destination="Oxq-FD-2fw" id="5s6-pM-sIx"/>
+                        <outlet property="playbuzzQuizHeight" destination="PcN-UK-8Uz" id="VA8-Ss-qgF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hou-7Z-8sc" sceneMemberID="firstResponder"/>

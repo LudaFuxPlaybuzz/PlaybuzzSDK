@@ -11,10 +11,20 @@ import PlaybuzzSDK
 
 class ViewController: UIViewController, PlaybuzzQuizProtocol{
     
-    @IBOutlet weak var containerHeight: NSLayoutConstraint!
-    @IBOutlet weak var viewsContainer: UIView!
+    //MARK: - IBOutlets
     @IBOutlet weak var playbuzzQuiz: PlaybuzzQuiz!
+    @IBOutlet weak var playbuzzQuizHeight: NSLayoutConstraint!
     
+    //MARK: - Parameters for PlaybuzzQuiz
+    let itemAlias = "shpaltman/10-best-commercials-for-the-olympic-games-rio-2016"
+    let companyDomain = "http://www.playbuzz.com"
+    let userID = UIDevice.current.identifierForVendor!.uuidString
+    let showRecommendations = true
+    let showShareButton = true
+    let showFacebookComments = true
+    let showItemInfo = true
+    
+    //MARK: - Setup
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,17 +32,9 @@ class ViewController: UIViewController, PlaybuzzQuizProtocol{
         self.reloadItem()
     }
     
+    //MARK: - PlaybuzzQuiz
     func reloadItem()
     {
-        let itemAlias = "shpaltman/10-best-commercials-for-the-olympic-games-rio-2016"
-        let userID = UIDevice.current.identifierForVendor!.uuidString
-        let companyDomain = "http://www.playbuzz.com"
-        
-        let showRecommendations = true
-        let showShareButton = true
-        let showFacebookComments = true
-        let showItemInfo = true
-        
         playbuzzQuiz.reloadItem(userID,
                                 itemAlias: itemAlias,
                                 showRecommendations: showRecommendations,
@@ -42,9 +44,10 @@ class ViewController: UIViewController, PlaybuzzQuizProtocol{
                                 companyDomain: companyDomain)
     }
     
-    //MARK: PlaybuzzWebView Protocol
-    func resizePlaybuzzContainer(_ height: CGFloat){
-        containerHeight.constant = height
+    //MARK: - PlaybuzzQuizProtocol Protocol
+    func resizePlaybuzzContainer(_ height: CGFloat)
+    {
+        playbuzzQuizHeight.constant = height
     }
 }
 

@@ -13,7 +13,10 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
 
     var webView: WKWebView!
     public weak var delegate: PlaybuzzQuizProtocol?
-
+//    let myGlobal = {
+//    print("hello")
+//    }()
+    
     public override init(frame: CGRect)
     {
         super.init(frame: frame)
@@ -24,7 +27,8 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
     required public init?(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
-        
+
+
         addBehavior()
     }
     func addBehavior ()

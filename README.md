@@ -2,8 +2,9 @@
 
 [![CI Status](http://img.shields.io/travis/Luda Fux/PlaybuzzSDK.svg?style=flat)](https://travis-ci.org/Luda Fux/PlaybuzzSDK)
 [![Version](https://img.shields.io/cocoapods/v/PlaybuzzSDK.svg?style=flat)](http://cocoapods.org/pods/PlaybuzzSDK)
-[![License](https://img.shields.io/cocoapods/l/PlaybuzzSDK.svg?style=flat)](http://cocoapods.org/pods/PlaybuzzSDK)
-[![Platform](https://img.shields.io/cocoapods/p/PlaybuzzSDK.svg?style=flat)](http://cocoapods.org/pods/PlaybuzzSDK)
+<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/swift3-compatible-4BC51D.svg?style=flat" alt="Swift 3 compatible" /></a>
+<a href="https://github.com/orazz/CreditCardForm-iOS/blob/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="License: MIT" /></a>
+<img src="https://img.shields.io/badge/platform-iOS-blue.svg?style=flat" alt="Platform iOS" />
 
 ## Get Started
 

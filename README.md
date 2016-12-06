@@ -22,6 +22,7 @@ The Playbuzz SDK helps app developers embed Playbuzz games in thier native apps.
 ## Example
 
 To run the example project:
+
 1. Donwload the repo
 2. Run `pod install` from the Example directory.
 3. Run the project

@@ -1,6 +1,6 @@
 ![playbuzz logo](http://i68.tinypic.com/55o84j.png)
 
-[![Luda Fux](https://img.shields.io/badge/contact-Luda%20Fux-blue.svg)](mailto:luda@playbuzz.com)
+[![Support](https://img.shields.io/badge/contact-Support-blue.svg)](mailto:luda@playbuzz.com)
 [![CI Status](http://img.shields.io/travis/Luda Fux/PlaybuzzSDK.svg?style=flat)](https://travis-ci.org/Luda Fux/PlaybuzzSDK)
 [![Version](https://img.shields.io/cocoapods/v/PlaybuzzSDK.svg?style=flat)](http://cocoapods.org/pods/PlaybuzzSDK)
 [![Swift 3 compatible](https://img.shields.io/badge/language-Swift-yellowgreen.svg)](https://developer.apple.com/swift)

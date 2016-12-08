@@ -26,27 +26,16 @@ To check out example, download the repo, open PlaybuzzSDK.xcworkspace and run th
 
 **Add Playbuzz SDK using CocoaPods** 
 
-Create the Podfile
-
-In the same directory as YourProject.xcodeproj file, create a file named Podfile that includes the following:
-
-```
+- Create the Podfile - In the same directory as YourProject.xcodeproj file, create a file named Podfile that includes the following:
+``` Swift
 use_frameworks!
 
 target 'YourProject' do
    pod 'PlaybuzzSDK'
 end
 ```
-
-**Run pod install**
-
-Run pod install from the terminal, in the same directory as the Podfile. Once the installation finishes, close BannerExample.xcodeproj and open up BannerExample.xcworkspace. Your project files should include a Pods project with new dependencies for Firebase and AdMob.
-
-PlaybuzzSDK is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-
-###Rebuild and run your project. 
+- Run pod install - Run pod install from the terminal, in the same directory as the Podfile. Once the installation finishes, close YourProject.xcodeproj and open up YourProject.xcworkspace. Your project files should include a Pods project with new dependencies for PlaybuzzSDK.
+- Rebuild and run your project. 
 The app still shows a white screen, but now the Playbuzz SDK is being referenced in your app.
 
 ### Enable **Allow Arbitrary Loads** in **App Transport Security Settings** in your Info.plist

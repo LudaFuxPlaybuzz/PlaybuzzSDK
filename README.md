@@ -19,7 +19,7 @@ The Playbuzz SDK enabled developers easily embed Playbuzz games in native apps.
 
 ## Example
 
-- To check out example, download the repo, open PlaybuzzSDK.xcworkspace and run the project.
+To check out example, download the repo, open PlaybuzzSDK.xcworkspace and run the project.
 
 ## Installation
 

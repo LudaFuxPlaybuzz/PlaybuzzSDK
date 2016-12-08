@@ -30,15 +30,15 @@ The Playbuzz SDK enabled developers easily embed Playbuzz games in native apps.
 pod 'PlaybuzzSDK'
 ```
 
-- Enable html loads
+- Enable html loads in the plist
  Enable **Allow Arbitrary Loads** in **App Transport Security Settings** in your Info.plist
 ![plist](http://i68.tinypic.com/286wzet.png)
 
 ## Usage
 
-Click the Main.storyboard tab. In the bottom-right corner, select a UIView element and drag it into your view controller. Then in the Custom Class section in the top-right corner, select the custom class PlaybuzzQuiz as the Class for this view.
+Click the Main.storyboard tab. In the bottom-right corner, select a UIView element and drag it into UIScrollView in your view controller. Then in the Custom Class section in the top-right corner, select the custom class PlaybuzzQuiz as the Class for this view (make sure the module is PlaybuzzSDK)
 
-![view](http://i66.tinypic.com/2vv464j.png)
+![view](http://i66.tinypic.com/20rskl3.png)
 
 Add constraints on the PlaybuzzSDK so it would properly fit your views
 
@@ -48,24 +48,20 @@ Open up the Assistant Editor by navigating to View > Assistant Editor > Show Ass
 ![referance](http://i66.tinypic.com/elbp8z.png)
 ![referance](http://i68.tinypic.com/210mwc5.png)
 
+Do the same for playbuzzQuiz height constaraint 
+
+![height](http://i68.tinypic.com/211jwhz.png)
+![height](http://i63.tinypic.com/jigmsl.png)
+
 To resolve a compilation error, add **import PlaybuzzSDK** to ViewController.swift so the compiler knows that PlaybuzzQuiz is a valid class.
 
 Load the quiz with your preferable configuration 
 
 **ViewController.swift**
 
-Finally, add code into ViewController.m or ViewController.swift that loads an ad into the banner view.
+Finally, add code into ViewController.m or ViewController.swift that loads the quiz into the playbuzz view.
 
 ```Swift
-import UIKit
-import PlaybuzzSDK
-
-class ViewController: UIViewController{
-    
-    //MARK: - IBOutlets
-    @IBOutlet weak var playbuzzQuiz: PlaybuzzQuiz!
-    
-    //MARK: - Setup
     override func viewDidLoad() {
         
         super.viewDidLoad()

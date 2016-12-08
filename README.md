@@ -24,21 +24,14 @@ To check out example, download the repo, open PlaybuzzSDK.xcworkspace and run th
 
 ## Installation
 
-**Add Playbuzz SDK using CocoaPods** 
+- Add Playbuzz SDK using [CocoaPods](http://cocoapods.org) 
 
-- Create the Podfile - In the same directory as YourProject.xcodeproj file, create a file named Podfile that includes the following:
 ``` Swift
-use_frameworks!
-
-target 'YourProject' do
    pod 'PlaybuzzSDK'
-end
 ```
-- Run pod install - Run pod install from the terminal, in the same directory as the Podfile. Once the installation finishes, close YourProject.xcodeproj and open up YourProject.xcworkspace. Your project files should include a Pods project with new dependencies for PlaybuzzSDK.
-- Rebuild and run your project. 
-The app still shows a white screen, but now the Playbuzz SDK is being referenced in your app.
 
-### Enable **Allow Arbitrary Loads** in **App Transport Security Settings** in your Info.plist
+- Enable html loads
+ Enable **Allow Arbitrary Loads** in **App Transport Security Settings** in your Info.plist
 ![plist](http://i68.tinypic.com/286wzet.png)
 
 ### Add a PlaybuzzQuiz in storyboard

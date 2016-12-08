@@ -86,7 +86,9 @@ class ViewController: UIViewController{
 ```
 
 - itemAlies - the url suffix of your item 
+
 ![url](http://i63.tinypic.com/1z35k7b.png)
+
 - companyDomain - the domain configered for your compony 
 - userID - uniq identifier for every device 
 

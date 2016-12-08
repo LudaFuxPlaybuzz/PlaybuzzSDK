@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C41b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="OuK-VP-YAr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C60b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="OuK-VP-YAr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -54,7 +54,7 @@
                     <size key="freeformSize" width="375" height="750"/>
                     <connections>
                         <outlet property="playbuzzQuiz" destination="Oxq-FD-2fw" id="5s6-pM-sIx"/>
-                        <outlet property="playbuzzQuizHeight" destination="PcN-UK-8Uz" id="VA8-Ss-qgF"/>
+                        <outlet property="playbuzzQuizHeight" destination="PcN-UK-8Uz" id="p32-03-bIi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hou-7Z-8sc" sceneMemberID="firstResponder"/>

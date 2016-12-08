@@ -11,11 +11,9 @@ import PlaybuzzSDK
 
 class ViewController: UIViewController, PlaybuzzQuizProtocol{
     
-    //MARK: - IBOutlets
     @IBOutlet weak var playbuzzQuiz: PlaybuzzQuiz!
     @IBOutlet weak var playbuzzQuizHeight: NSLayoutConstraint!
     
-    //MARK: - Setup
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -35,7 +33,6 @@ class ViewController: UIViewController, PlaybuzzQuizProtocol{
                                 companyDomain: companyDomain)
     }
     
-    //MARK: - PlaybuzzQuizProtocol Protocol
     func resizePlaybuzzContainer(_ height: CGFloat)
     {
         playbuzzQuizHeight.constant = height

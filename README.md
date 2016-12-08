@@ -36,7 +36,7 @@ pod 'PlaybuzzSDK'
 
 ## Usage
 
-Click the Main.storyboard tab. In the bottom-right corner, select a UIView element and drag it into UIScrollView in your view controller. Then in the Custom Class section in the top-right corner, select the custom class PlaybuzzQuiz as the Class for this view (make sure the module is PlaybuzzSDK)
+Drag a **UIView** into **UIScrollView** in your view controller. Then in the Custom Class section in the top-right corner, select the custom class **PlaybuzzQuiz** as the Class for this view (make sure the module is **PlaybuzzSDK**)
 
 ![view](http://i66.tinypic.com/20rskl3.png)
 

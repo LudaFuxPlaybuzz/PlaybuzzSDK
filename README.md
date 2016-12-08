@@ -24,13 +24,13 @@ The Playbuzz SDK enabled developers easily embed Playbuzz games in native apps.
 
 ## Installation
 
- Add Playbuzz SDK using [CocoaPods](http://cocoapods.org) 
+1) Add Playbuzz SDK using [CocoaPods](http://cocoapods.org) 
 
 ```
 pod 'PlaybuzzSDK'
 ```
 
-- Enable html loads in the plist
+2) Enable html loads in the plist
  Enable **Allow Arbitrary Loads** in **App Transport Security Settings** in your Info.plist
 ![plist](http://i67.tinypic.com/10hlwn8.png)
 

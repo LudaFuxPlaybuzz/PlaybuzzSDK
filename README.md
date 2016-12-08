@@ -67,7 +67,7 @@ You'll need **itemAlies** - the url suffix of your item
         
         super.viewDidLoad()
         
-        let companyDomain = "http://www.youCompony.com"
+        let companyDomain = "http://www.example.com"
         let userID = UIDevice.current.identifierForVendor!.uuidString
         let itemAlias = "shpaltman/10-best-commercials-for-the-olympic-games-rio-2016"
         
@@ -123,7 +123,7 @@ class ViewController: UIViewController, PlaybuzzQuizProtocol{
         self.playbuzzQuiz.delegate = self
      
         let itemAlias = "shpaltman/10-best-commercials-for-the-olympic-games-rio-2016"
-        let companyDomain = "http://www.playbuzz.com"
+        let companyDomain = "http://www.example.com"
         let userID = UIDevice.current.identifierForVendor!.uuidString
         
         playbuzzQuiz.reloadItem(userID,

@@ -36,29 +36,31 @@ pod 'PlaybuzzSDK'
 
 ## Usage
 
-Drag a **UIView** into **UIScrollView** in your view controller. Then in the Custom Class section in the top-right corner, select the custom class **PlaybuzzQuiz** as the Class for this view (make sure the module is **PlaybuzzSDK**)
+1) Drag a **UIView** into **UIScrollView** in your view controller. Then in the Custom Class section in the top-right corner, select the custom class **PlaybuzzQuiz** as the Class for this view (make sure the module is **PlaybuzzSDK**)
 
 ![view](http://i66.tinypic.com/20rskl3.png)
 
-Add constraints on the PlaybuzzSDK so it would properly fit your views
+2) Add constraints on the PlaybuzzSDK so it would properly fit your views
 
-Adding a reference to your PlaybuzzQuiz in code
+3) Adding a reference to your PlaybuzzQuiz in code
 
 ![referance](http://i66.tinypic.com/elbp8z.png)
 ![referance](http://i68.tinypic.com/210mwc5.png)
 
-To resolve a compilation error, add **import PlaybuzzSDK** to ViewController.swift so the compiler knows that PlaybuzzQuiz is a valid class.
+4) To resolve a compilation error, add **import PlaybuzzSDK** to ViewController.swift so the compiler knows that PlaybuzzQuiz is a valid class.
 
-Adding a reference to playbuzzQuiz height constaraint 
+5) Adding a reference to playbuzzQuiz height constaraint 
 
 ![height](http://i68.tinypic.com/211jwhz.png)
 ![height](http://i63.tinypic.com/jigmsl.png)
 
-### Load the quiz with your preferable configuration 
+6) Load the quiz with your preferable configuration
+
+You'll need **itemAlies** - the url suffix of your item 
+
+![url](http://i63.tinypic.com/1z35k7b.png)
 
 **ViewController.swift**
-
-Add code into ViewController.m or ViewController.swift that loads the quiz into the playbuzz view.
 
 ```Swift
     override func viewDidLoad() {
@@ -83,9 +85,7 @@ Add code into ViewController.m or ViewController.swift that loads the quiz into 
 2. **userID** - uniq identifier for every device 
 3. **itemAlies** - the url suffix of your item 
 
-![url](http://i63.tinypic.com/1z35k7b.png)
-
-### Make the quiz bigger when it loads
+7) Update quiz height
 
 **Conform to PlaybuzzQuizProtocol**
 

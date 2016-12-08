@@ -54,7 +54,7 @@ pod 'PlaybuzzSDK'
 ![height](http://i68.tinypic.com/211jwhz.png)
 ![height](http://i63.tinypic.com/jigmsl.png)
 
-6) Load the quiz with your preferable configuration
+6) Load the quiz 
 
 You'll need **itemAlies** - the url suffix of your item 
 

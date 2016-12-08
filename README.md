@@ -48,18 +48,18 @@ Open up the Assistant Editor by navigating to View > Assistant Editor > Show Ass
 ![referance](http://i66.tinypic.com/elbp8z.png)
 ![referance](http://i68.tinypic.com/210mwc5.png)
 
+To resolve a compilation error, add **import PlaybuzzSDK** to ViewController.swift so the compiler knows that PlaybuzzQuiz is a valid class.
+
 Do the same for playbuzzQuiz height constaraint 
 
 ![height](http://i68.tinypic.com/211jwhz.png)
 ![height](http://i63.tinypic.com/jigmsl.png)
 
-To resolve a compilation error, add **import PlaybuzzSDK** to ViewController.swift so the compiler knows that PlaybuzzQuiz is a valid class.
-
-Load the quiz with your preferable configuration 
+### Load the quiz with your preferable configuration 
 
 **ViewController.swift**
 
-Finally, add code into ViewController.m or ViewController.swift that loads the quiz into the playbuzz view.
+Add code into ViewController.m or ViewController.swift that loads the quiz into the playbuzz view.
 
 ```Swift
     override func viewDidLoad() {
@@ -86,12 +86,63 @@ Finally, add code into ViewController.m or ViewController.swift that loads the q
 
 ![url](http://i63.tinypic.com/1z35k7b.png)
 
+### Make the quiz bigger when it loads
 
+**Conform to PlaybuzzQuizProtocol**
 
+```Swift
+class ViewController: UIViewController, PlaybuzzQuizProtocol
+```
+
+and implemt the following function:
+```Swift
+func resizePlaybuzzContainer(_ height: CGFloat)
+{
+    playbuzzQuizHeight.constant = height
+}
+```
 ### Build and run the app
 ![finished](http://i65.tinypic.com/f4phya.png)
 
 Congratulations, you've successfully made your first PlaybuzzQuiz!
+
+## The finished code
+
+```Swift
+import UIKit
+import PlaybuzzSDK
+
+class ViewController: UIViewController, PlaybuzzQuizProtocol{
+    
+    @IBOutlet weak var playbuzzQuiz: PlaybuzzQuiz!
+    @IBOutlet weak var playbuzzQuizHeight: NSLayoutConstraint!
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        
+        self.playbuzzQuiz.delegate = self
+     
+        let itemAlias = "shpaltman/10-best-commercials-for-the-olympic-games-rio-2016"
+        let companyDomain = "http://www.playbuzz.com"
+        let userID = UIDevice.current.identifierForVendor!.uuidString
+        
+        playbuzzQuiz.reloadItem(userID,
+                                itemAlias: itemAlias,
+                                showRecommendations: true,
+                                showShareButton: true,
+                                showFacebookComments: true,
+                                showItemInfo: true,
+                                companyDomain: companyDomain)
+    }
+    
+    func resizePlaybuzzContainer(_ height: CGFloat)
+    {
+        playbuzzQuizHeight.constant = height
+    }
+}
+```
+
 ## Author
 
 Luda Fux, luda@playbuzz.com

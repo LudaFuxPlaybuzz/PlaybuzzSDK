@@ -32,7 +32,7 @@ pod 'PlaybuzzSDK'
 
 - Enable html loads in the plist
  Enable **Allow Arbitrary Loads** in **App Transport Security Settings** in your Info.plist
-![plist](http://i68.tinypic.com/286wzet.png)
+![plist](http://i67.tinypic.com/10hlwn8.png)
 
 ## Usage
 

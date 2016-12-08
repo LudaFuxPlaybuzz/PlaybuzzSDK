@@ -21,7 +21,7 @@ class ViewController: UIViewController, PlaybuzzQuizProtocol{
         self.playbuzzQuiz.delegate = self
      
         let itemAlias = "shpaltman/10-best-commercials-for-the-olympic-games-rio-2016"
-        let companyDomain = "http://example.com"
+        let companyDomain = "http://www.example.com"
         let userID = UIDevice.current.identifierForVendor!.uuidString
         
         playbuzzQuiz.reloadItem(userID,

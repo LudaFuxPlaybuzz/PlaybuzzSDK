@@ -14,7 +14,6 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		855ADA661DD1CB27003A4342 /* PlaybuzzWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855ADA631DD1CB27003A4342 /* PlaybuzzWebView.swift */; };
 		855ADA681DD1CB27003A4342 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855ADA651DD1CB27003A4342 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,7 +40,6 @@
 		607FACE51AFB9204008FA782 /* PlaybuzzSDK_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaybuzzSDK_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		855ADA631DD1CB27003A4342 /* PlaybuzzWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybuzzWebView.swift; sourceTree = "<group>"; };
 		855ADA651DD1CB27003A4342 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		890E2C1DF6DA06F8F4F070F4 /* PlaybuzzSDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = PlaybuzzSDK.podspec; path = ../PlaybuzzSDK.podspec; sourceTree = "<group>"; };
 		BA5307E796A9B3E0197C7D6F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				855ADA631DD1CB27003A4342 /* PlaybuzzWebView.swift */,
 				855ADA651DD1CB27003A4342 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
@@ -365,7 +362,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				855ADA661DD1CB27003A4342 /* PlaybuzzWebView.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				855ADA681DD1CB27003A4342 /* ViewController.swift in Sources */,
 			);

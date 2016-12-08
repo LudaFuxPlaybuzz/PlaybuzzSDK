@@ -15,32 +15,23 @@ class ViewController: UIViewController, PlaybuzzQuizProtocol{
     @IBOutlet weak var playbuzzQuiz: PlaybuzzQuiz!
     @IBOutlet weak var playbuzzQuizHeight: NSLayoutConstraint!
     
-    //MARK: - Parameters for PlaybuzzQuiz
-    let itemAlias = "shpaltman/10-best-commercials-for-the-olympic-games-rio-2016"
-    let companyDomain = "http://www.playbuzz.com"
-    let userID = UIDevice.current.identifierForVendor!.uuidString
-    let showRecommendations = true
-    let showShareButton = true
-    let showFacebookComments = true
-    let showItemInfo = true
-    
     //MARK: - Setup
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         self.playbuzzQuiz.delegate = self
-        self.reloadItem()
-    }
-    
-    //MARK: - PlaybuzzQuiz
-    func reloadItem()
-    {
+     
+        let itemAlias = "shpaltman/10-best-commercials-for-the-olympic-games-rio-2016"
+        let companyDomain = "http://www.playbuzz.com"
+        let userID = UIDevice.current.identifierForVendor!.uuidString
+        
         playbuzzQuiz.reloadItem(userID,
                                 itemAlias: itemAlias,
-                                showRecommendations: showRecommendations,
-                                showShareButton: showShareButton,
-                                showFacebookComments: showFacebookComments,
-                                showItemInfo: showItemInfo,
+                                showRecommendations: true,
+                                showShareButton: true,
+                                showFacebookComments: true,
+                                showItemInfo: true,
                                 companyDomain: companyDomain)
     }
     

@@ -17,11 +17,11 @@ This pod allows you to intergate Playbuzz quizes with just couple of lines.
 #s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Luda Fux' => 'luda@playbuzz.com' }
-  s.source           = { :git => 'https://github.com/<GITHUB_USERNAME>/PlaybuzzSDK.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/LudaFuxPlaybuzz/playbuzz-ios-sdk.git', :tag => s.version.to_s }
   s.social_media_url = 'https://www.facebook.com/playbuzz/'
   s.ios.deployment_target = '8.0'
   s.source_files = 'PlaybuzzSDK/Classes/**/*'
-  
+
   # s.resource_bundles = {
   #   'PlaybuzzSDK' => ['PlaybuzzSDK/Assets/*.png']
   # }

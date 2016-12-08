@@ -70,9 +70,9 @@ class ViewController: UIViewController{
         
         super.viewDidLoad()
         
-        let itemAlias = "shpaltman/10-best-commercials-for-the-olympic-games-rio-2016"
-        let companyDomain = "http://www.playbuzz.com"
+        let companyDomain = "http://www.youCompony.com"
         let userID = UIDevice.current.identifierForVendor!.uuidString
+        let itemAlias = "shpaltman/10-best-commercials-for-the-olympic-games-rio-2016"
         
         playbuzzQuiz.reloadItem(userID,
                                 itemAlias: itemAlias,
@@ -84,13 +84,13 @@ class ViewController: UIViewController{
     } 
 }
 ```
-
-- itemAlies - the url suffix of your item 
+1. **companyDomain** - the domain configered for your compony 
+2. **userID** - uniq identifier for every device 
+3. **itemAlies** - the url suffix of your item 
 
 ![url](http://i63.tinypic.com/1z35k7b.png)
 
-- companyDomain - the domain configered for your compony 
-- userID - uniq identifier for every device 
+
 
 ### Build and run the app
 ![finished](http://i65.tinypic.com/f4phya.png)

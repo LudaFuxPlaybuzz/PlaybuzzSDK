@@ -43,14 +43,13 @@ Drag a **UIView** into **UIScrollView** in your view controller. Then in the Cus
 Add constraints on the PlaybuzzSDK so it would properly fit your views
 
 Adding a reference to your PlaybuzzQuiz in code
-Open up the Assistant Editor by navigating to View > Assistant Editor > Show Assistant Editor. Make sure the ViewController.Swift file is showing in the Assistant Editor (the right pane of the screen). Next, holding the control key, click the PlaybuzzQuiz, and drag your cursor over to ViewController.Swift 
 
 ![referance](http://i66.tinypic.com/elbp8z.png)
 ![referance](http://i68.tinypic.com/210mwc5.png)
 
 To resolve a compilation error, add **import PlaybuzzSDK** to ViewController.swift so the compiler knows that PlaybuzzQuiz is a valid class.
 
-Do the same for playbuzzQuiz height constaraint 
+Adding a reference to playbuzzQuiz height constaraint 
 
 ![height](http://i68.tinypic.com/211jwhz.png)
 ![height](http://i63.tinypic.com/jigmsl.png)

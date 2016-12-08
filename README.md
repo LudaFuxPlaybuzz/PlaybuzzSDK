@@ -10,35 +10,28 @@
 
 ## Get Started
 
-The Playbuzz SDK helps app developers embed Playbuzz games in thier native apps. This guide shows you how to create a new iOS project, include the Playbuzz SDK, and add your first Playbuzz game.
+The Playbuzz SDK enabled developers easily embed Playbuzz games in native apps.
 
 ## Prerequisites
 
-- Xcode 7.0 or higher
-- An iOS 7.0 or higher deployment target
-- A valid Xcode project
-- Installation of [CocoaPods](http://cocoapods.org) for dependency management
+- Xcode 8
+- iOS 9.0+
+- Installation of [CocoaPods](http://cocoapods.org)
 
 ## Example
 
-To run the example project:
-
-1. Donwload the repo
-2. Run `pod install` from the Example directory.
-3. Run the project
+To check out example, download the repo, open PlaybuzzSDK.xcworkspace and run the project.
 
 ## Installation
 
-### Add Playbuzz SDK using CocoaPods
+**Add Playbuzz SDK using CocoaPods** 
 
-**Create the Podfile**
+Create the Podfile
 
 In the same directory as YourProject.xcodeproj file, create a file named Podfile that includes the following:
 
 ```
-source 'https://github.com/CocoaPods/Specs.git'
-
-platform :ios, '7.0'
+use_frameworks!
 
 target 'YourProject' do
    pod 'PlaybuzzSDK'

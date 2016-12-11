@@ -2,15 +2,11 @@ PODS:
   - PlaybuzzSDK (0.1.0)
 
 DEPENDENCIES:
-  - PlaybuzzSDK (from `../`)
-
-EXTERNAL SOURCES:
-  PlaybuzzSDK:
-    :path: ../
+  - PlaybuzzSDK
 
 SPEC CHECKSUMS:
-  PlaybuzzSDK: 072e132f9e93ff4a36c0f9f2f1ffcb7f450f3088
+  PlaybuzzSDK: f2308864ce14dbc190a06f47944ae44f6a1cd11c
 
-PODFILE CHECKSUM: fb7141ec1a6d918ae469e7d362e092bbc384e140
+PODFILE CHECKSUM: aab5c9147b04b9d50bba6d36bec4fbe847da9ea3
 
 COCOAPODS: 1.1.1

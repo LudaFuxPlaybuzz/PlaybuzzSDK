@@ -8,10 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PlaybuzzSDK'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'Embed your our Playbuzz quiz via PlaybuzzSDK.'
-  s.description      = <<-DESC This pod allows you to intergate Playbuzz quizes with just couple of lines. 
-                       DESC
   s.homepage         = 'https://github.com/LudaFuxPlaybuzz/playbuzz-ios-sdk'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Luda Fux' => 'luda@playbuzz.com' }

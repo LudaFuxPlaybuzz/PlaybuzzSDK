@@ -15,7 +15,7 @@ The Playbuzz SDK enabled developers easily embed Playbuzz games in native apps.
 
 - Xcode 8
 - iOS 9.0+
-- Installation of [CocoaPods](http://cocoapods.org)
+- Installation of [CocoaPods](http://cocoapods.org). ([Tutorial](https://www.raywenderlich.com/97014/use-cocoapods-with-swift) for beginners)
 
 ## Example
 
@@ -23,7 +23,7 @@ To check out example, download the repo, open PlaybuzzSDK.xcworkspace and run th
 
 ## Installation
 
-1) Add Playbuzz SDK using CocoaPods ([tutorial for beginners](https://www.raywenderlich.com/97014/use-cocoapods-with-swift))
+1) Add Playbuzz SDK using CocoaPods 
 
 ```
 pod 'PlaybuzzSDK'

@@ -23,7 +23,7 @@ To check out example, download the repo, open PlaybuzzSDK.xcworkspace and run th
 
 ## Installation
 
-1) Add Playbuzz SDK using [CocoaPods](http://cocoapods.org) 
+1) Add Playbuzz SDK using CocoaPods ([tutorial for beginners](https://www.raywenderlich.com/97014/use-cocoapods-with-swift))
 
 ```
 pod 'PlaybuzzSDK'

@@ -24,13 +24,13 @@ class ViewController: UIViewController, PlaybuzzQuizProtocol{
         let companyDomain = "http://www.example.com"
         let userID = UIDevice.current.identifierForVendor!.uuidString
         
-        playbuzzQuiz.reloadItem(userID,
-                                itemAlias: itemAlias,
+        playbuzzQuiz.reloadItem(itemAlias: itemAlias,
+                                companyDomain: companyDomain,
+                                userID: userID,
                                 showRecommendations: true,
                                 showShareButton: true,
                                 showFacebookComments: true,
-                                showItemInfo: true,
-                                companyDomain: companyDomain)
+                                showItemInfo: true)
     }
     
     func resizePlaybuzzContainer(_ height: CGFloat)

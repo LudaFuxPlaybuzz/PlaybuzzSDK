@@ -70,13 +70,13 @@ You'll need **itemAlies** - the url suffix of your item
         let userID = UIDevice.current.identifierForVendor!.uuidString
         let itemAlias = "shpaltman/10-best-commercials-for-the-olympic-games-rio-2016"
         
-        playbuzzQuiz.reloadItem(userID,
-                                itemAlias: itemAlias,
+        playbuzzQuiz.reloadItem(itemAlias: itemAlias,
+                                companyDomain: companyDomain,
+                                userID: userID,
                                 showRecommendations: true,
                                 showShareButton: true,
                                 showFacebookComments: true,
-                                showItemInfo: true,
-                                companyDomain: companyDomain)
+                                showItemInfo: true)
     } 
 }
 ```
@@ -125,13 +125,13 @@ class ViewController: UIViewController, PlaybuzzQuizProtocol{
         let companyDomain = "http://www.example.com"
         let userID = UIDevice.current.identifierForVendor!.uuidString
         
-        playbuzzQuiz.reloadItem(userID,
-                                itemAlias: itemAlias,
+        playbuzzQuiz.reloadItem(itemAlias: itemAlias,
+                                companyDomain: companyDomain,
+                                userID: userID,
                                 showRecommendations: true,
                                 showShareButton: true,
                                 showFacebookComments: true,
-                                showItemInfo: true,
-                                companyDomain: companyDomain)
+                                showItemInfo: true)
     }
     
     func resizePlaybuzzContainer(_ height: CGFloat)

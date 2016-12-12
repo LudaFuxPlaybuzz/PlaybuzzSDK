@@ -46,13 +46,13 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
         self.addSubview(webView)
     }
     
-    public func reloadItem(_ userID: String,
-                    itemAlias:String,
-                    showRecommendations: Bool,
-                    showShareButton: Bool,
-                    showFacebookComments: Bool,
-                    showItemInfo: Bool,
-                    companyDomain: String)
+    public func reloadItem(itemAlias:String,
+                            companyDomain: String,
+                            userID: String,
+                            showRecommendations: Bool,
+                            showShareButton: Bool,
+                            showFacebookComments: Bool,
+                            showItemInfo: Bool)
     {
         if webView.isLoading {
             webView.stopLoading()

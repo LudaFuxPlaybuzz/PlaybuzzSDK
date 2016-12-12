@@ -24,7 +24,7 @@ class ViewController: UIViewController, PlaybuzzQuizProtocol{
         let companyDomain = "http://www.example.com"
         let userID = UIDevice.current.identifierForVendor!.uuidString
         
-        playbuzzQuiz.reloadItem(itemAlias: itemAlias,
+        playbuzzQuiz.reloadItem(itemAlias,
                                 companyDomain: companyDomain,
                                 userID: userID,
                                 showRecommendations: true,

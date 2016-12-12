@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PlaybuzzSDK'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'Embed your our Playbuzz quiz via PlaybuzzSDK.'
   s.homepage         = 'https://github.com/LudaFuxPlaybuzz/playbuzz-ios-sdk'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }

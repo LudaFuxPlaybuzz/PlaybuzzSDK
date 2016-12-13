@@ -27,9 +27,6 @@ class ViewController: UIViewController, PlaybuzzQuizProtocol{
         playbuzzQuiz.reloadItem(itemAlias,
                                 companyDomain: companyDomain,
                                 userID: userID,
-                                showRecommendations: true,
-                                showShareButton: true,
-                                showFacebookComments: true,
                                 showItemInfo: true)
     }
     

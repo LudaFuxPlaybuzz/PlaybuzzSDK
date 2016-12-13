@@ -42,30 +42,24 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
         webView.autoresizingMask = UIViewAutoresizing.flexibleWidth
         webView.scrollView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
         webView.configuration.userContentController.add(self,name: "callbackHandler")
-        
+        webView.scrollView.isScrollEnabled = false
         self.addSubview(webView)
     }
     
     public func reloadItem(_ itemAlias:String,
                            companyDomain: String,
                            userID: String,
-                           showRecommendations: Bool,
-                           showShareButton: Bool,
-                           showFacebookComments: Bool,
                            showItemInfo: Bool)
     {
         if webView.isLoading {
             webView.stopLoading()
         }
         
-        let embedTamplate = "<!DOCTYPE html><html><head> <meta content=\"width=device-width\" name=\"viewport\"> <style>.pb_iframe_bottom{display:none;}.pb_top_content_container{padding-bottom: 0 !important;}</style></head><body> <script type=\"text/javascript\">window.PlayBuzzCallback=function(event){var messageDict={\"event_name\":event.eventName,data:event.data};window.webkit.messageHandlers.callbackHandler.postMessage(messageDict)}</script> <script src=\"//cdn.playbuzz.com/widget/feed.js\" type=\"text/javascript\"> </script> <div class=\"pb_feed\" data-native-id=\"%@\" data-game=\"%@\" data-recommend=\"%@\" data-shares=\"%@\" data-comments=\"%@\" data-game-info=\"%@\" data-platform=\"iPhone\" ></div></body></html>"
+        let embedTamplate = "<!DOCTYPE html><html><head> <meta content=\"width=device-width\" name=\"viewport\"> <style>.pb_iframe_bottom{display:none;}.pb_top_content_container{padding-bottom: 0 !important;}</style></head><body> <script type=\"text/javascript\">window.PlayBuzzCallback=function(event){var messageDict={\"event_name\":event.eventName,data:event.data};window.webkit.messageHandlers.callbackHandler.postMessage(messageDict)}</script> <script src=\"//cdn.playbuzz.com/widget/feed.js\" type=\"text/javascript\"> </script> <div class=\"pb_feed\" data-native-id=\"%@\" data-game=\"%@\" data-recommend=false data-shares=false data-comments=false data-game-info=\"%@\" data-platform=\"iPhone\" ></div></body></html>"
         
         let embedString: String = String(format: embedTamplate,
                                          userID,
                                          itemAlias,
-                                         showRecommendations ? "true":"false",
-                                         showShareButton ? "true":"false",
-                                         showFacebookComments ? "true":"false",
                                          showItemInfo ? "true":"false")
         webView.loadHTMLString(embedString, baseURL: URL(string:companyDomain))
     }

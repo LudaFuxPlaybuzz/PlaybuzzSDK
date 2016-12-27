@@ -72,17 +72,13 @@ You'll need **itemAlies** - the url suffix of your item
         
         playbuzzQuiz.reloadItem(itemAlias,
                                 companyDomain: companyDomain,
-                                userID: userID,
-                                showRecommendations: true,
-                                showShareButton: true,
-                                showFacebookComments: true,
                                 showItemInfo: true)
     } 
 }
 ```
 1. **companyDomain** - the domain configered for your compony 
-2. **userID** - uniq identifier for every device 
-3. **itemAlies** - the url suffix of your item 
+2. **itemAlies** - the url suffix of your item 
+3. **showItemInfo** - show or hide item title and description
 
 7) Update quiz height
 
@@ -123,14 +119,9 @@ class ViewController: UIViewController, PlaybuzzQuizProtocol{
      
         let itemAlias = "shpaltman/10-best-commercials-for-the-olympic-games-rio-2016"
         let companyDomain = "http://www.example.com"
-        let userID = UIDevice.current.identifierForVendor!.uuidString
         
         playbuzzQuiz.reloadItem(itemAlias,
                                 companyDomain: companyDomain,
-                                userID: userID,
-                                showRecommendations: true,
-                                showShareButton: true,
-                                showFacebookComments: true,
                                 showItemInfo: true)
     }
     

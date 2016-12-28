@@ -22,11 +22,9 @@ class ViewController: UIViewController, PlaybuzzQuizProtocol{
      
         let itemAlias = "shpaltman/10-best-commercials-for-the-olympic-games-rio-2016"
         let companyDomain = "http://www.example.com"
-        let userID = UIDevice.current.identifierForVendor!.uuidString
         
         playbuzzQuiz.reloadItem(itemAlias,
                                 companyDomain: companyDomain,
-                                userID: userID,
                                 showItemInfo: true)
     }
     

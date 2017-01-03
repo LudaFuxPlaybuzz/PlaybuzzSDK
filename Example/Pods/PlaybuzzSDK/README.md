@@ -15,7 +15,7 @@ The Playbuzz SDK enabled developers easily embed Playbuzz games in native apps.
 
 - Xcode 8
 - iOS 9.0+
-- Installation of [CocoaPods](http://cocoapods.org)
+- Installation of [CocoaPods](http://cocoapods.org). ([Tutorial](https://www.raywenderlich.com/97014/use-cocoapods-with-swift) for beginners)
 
 ## Example
 
@@ -23,7 +23,7 @@ To check out example, download the repo, open PlaybuzzSDK.xcworkspace and run th
 
 ## Installation
 
-1) Add Playbuzz SDK using CocoaPods ([tutorial for beginners](https://www.raywenderlich.com/97014/use-cocoapods-with-swift))
+1) Add Playbuzz SDK using CocoaPods 
 
 ```
 pod 'PlaybuzzSDK'
@@ -70,19 +70,15 @@ You'll need **itemAlies** - the url suffix of your item
         let userID = UIDevice.current.identifierForVendor!.uuidString
         let itemAlias = "shpaltman/10-best-commercials-for-the-olympic-games-rio-2016"
         
-        playbuzzQuiz.reloadItem(itemAlias: itemAlias,
+        playbuzzQuiz.reloadItem(itemAlias,
                                 companyDomain: companyDomain,
-                                userID: userID,
-                                showRecommendations: true,
-                                showShareButton: true,
-                                showFacebookComments: true,
                                 showItemInfo: true)
     } 
 }
 ```
 1. **companyDomain** - the domain configered for your compony 
-2. **userID** - uniq identifier for every device 
-3. **itemAlies** - the url suffix of your item 
+2. **itemAlies** - the url suffix of your item 
+3. **showItemInfo** - show or hide item title and description
 
 7) Update quiz height
 
@@ -123,14 +119,9 @@ class ViewController: UIViewController, PlaybuzzQuizProtocol{
      
         let itemAlias = "shpaltman/10-best-commercials-for-the-olympic-games-rio-2016"
         let companyDomain = "http://www.example.com"
-        let userID = UIDevice.current.identifierForVendor!.uuidString
         
-        playbuzzQuiz.reloadItem(itemAlias: itemAlias,
+        playbuzzQuiz.reloadItem(itemAlias,
                                 companyDomain: companyDomain,
-                                userID: userID,
-                                showRecommendations: true,
-                                showShareButton: true,
-                                showFacebookComments: true,
                                 showItemInfo: true)
     }
     

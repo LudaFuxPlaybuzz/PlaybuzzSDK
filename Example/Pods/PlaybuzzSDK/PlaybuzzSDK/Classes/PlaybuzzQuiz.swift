@@ -10,12 +10,12 @@ import UIKit
 import WebKit
 
 public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
-
+    
     var webView: WKWebView!
     public weak var delegate: PlaybuzzQuizProtocol?
-//    let myGlobal = {
-//    print("hello")
-//    }()
+    //    let myGlobal = {
+    //    print("hello")
+    //    }()
     
     public override init(frame: CGRect)
     {
@@ -27,8 +27,8 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
     required public init?(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
-
-
+        
+        
         addBehavior()
     }
     func addBehavior ()
@@ -37,7 +37,7 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
         let configuration = WKWebViewConfiguration()
         configuration.userContentController = contentController
         configuration.allowsInlineMediaPlayback = true
-
+        
         webView = WKWebView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height), configuration: configuration)
         webView.autoresizingMask = [.flexibleWidth,.flexibleHeight]
         webView.scrollView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)

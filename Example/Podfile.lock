@@ -1,11 +1,11 @@
 PODS:
-  - PlaybuzzSDK (0.1.1)
+  - PlaybuzzSDK (0.1.3)
 
 DEPENDENCIES:
   - PlaybuzzSDK
 
 SPEC CHECKSUMS:
-  PlaybuzzSDK: e046408b43d14492328ff9846eb3b1f571386447
+  PlaybuzzSDK: e6d17ed4640673a3bd92ecb3477b4fc4e9c81598
 
 PODFILE CHECKSUM: aab5c9147b04b9d50bba6d36bec4fbe847da9ea3
 

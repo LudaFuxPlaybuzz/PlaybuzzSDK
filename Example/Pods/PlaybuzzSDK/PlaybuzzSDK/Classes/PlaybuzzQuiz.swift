@@ -101,12 +101,18 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
                     return
                 }
                 
-                if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
-                    print("PlaybuzzSDK, getItemData: statusCode should be 200, but is \(httpStatus.statusCode). response = \(response)")
+                if let httpStatus = response as? HTTPURLResponse
+                {
+                    if httpStatus.statusCode == 200
+                    {
+                        let responseString = String(data: data, encoding: .utf8)
+                        print("responseString = \(responseString)")
+                    }
+                    else
+                    {
+                        print("PlaybuzzSDK, getItemData: statusCode should be 200, but is \(httpStatus.statusCode). response = \(response)")
+                    }
                 }
-                
-                let responseString = String(data: data, encoding: .utf8)
-                print("responseString = \(responseString)")
             }
             task.resume()
         }

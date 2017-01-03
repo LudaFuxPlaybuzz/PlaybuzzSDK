@@ -37,9 +37,9 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
         let configuration = WKWebViewConfiguration()
         configuration.userContentController = contentController
         configuration.allowsInlineMediaPlayback = true
-        
-        webView = WKWebView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 250), configuration: configuration)
-        webView.autoresizingMask = UIViewAutoresizing.flexibleWidth
+
+        webView = WKWebView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height), configuration: configuration)
+        webView.autoresizingMask = [.flexibleWidth,.flexibleHeight]
         webView.scrollView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
         webView.configuration.userContentController.add(self,name: "callbackHandler")
         webView.scrollView.isScrollEnabled = false
@@ -76,9 +76,13 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
     {
         webView.sizeToFit()
         let webViewContentHeight:CGFloat = webView.scrollView.contentSize.height
-        webView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: webViewContentHeight)
         self.delegate?.resizePlaybuzzContainer(webViewContentHeight)
         
+    }
+    
+    public func prepareForReuse() -> Void
+    {
+        self.webView.loadHTMLString("", baseURL: nil)
     }
     
     public func userContentController(_ userContentController: WKUserContentController,didReceive message: WKScriptMessage)

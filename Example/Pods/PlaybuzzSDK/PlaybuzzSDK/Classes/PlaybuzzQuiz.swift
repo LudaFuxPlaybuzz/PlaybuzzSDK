@@ -92,23 +92,23 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
     {
         if let url = URL(string: "http://rest-api-v2.playbuzz.com/v2/items?itemAlias=gigglebuzz10/can-you-name-all-20-of-these-fresh-prince-of-bel-air-characters")
         {
-//            var request = URLRequest(url: url)
-//            request.httpMethod = "GET"
-//
-//            let task = URLSession.shared.dataTask(with: request) { data, response, error in
-//                guard let data = data, error == nil else {
-//                    print("PlaybuzzSDK, getItemData: error=\(error)")
-//                    return
-//                }
-//                
-//                if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
-//                    print("PlaybuzzSDK, getItemData: statusCode should be 200, but is \(httpStatus.statusCode). response = \(response)")
-//                }
-//                
-//                let responseString = String(data: data, encoding: .utf8)
-//                print("responseString = \(responseString)")
-//            }
-//            task.resume()
+            var request = URLRequest(url: url)
+            request.httpMethod = "GET"
+
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                guard let data = data, error == nil else {
+                    print("PlaybuzzSDK, getItemData: error=\(error)")
+                    return
+                }
+                
+                if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                    print("PlaybuzzSDK, getItemData: statusCode should be 200, but is \(httpStatus.statusCode). response = \(response)")
+                }
+                
+                let responseString = String(data: data, encoding: .utf8)
+                print("responseString = \(responseString)")
+            }
+            task.resume()
         }
     }
     

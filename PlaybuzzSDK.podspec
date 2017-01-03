@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/LudaFuxPlaybuzz/playbuzz-ios-sdk'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Luda Fux' => 'luda@playbuzz.com' }
-  s.source           = { :git => 'https://github.com/LudaFuxPlaybuzz/playbuzz-ios-sdk.git', :tag => 'v0.1.1' }
+  s.source           = { :git => 'https://github.com/LudaFuxPlaybuzz/playbuzz-ios-sdk.git', :tag => '0.1.1' }
   s.social_media_url = 'https://www.facebook.com/playbuzz/'
   s.ios.deployment_target = '8.0'
   s.source_files = 'PlaybuzzSDK/**/*'

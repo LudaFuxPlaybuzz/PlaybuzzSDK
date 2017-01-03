@@ -13,9 +13,6 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
     
     var webView: WKWebView!
     public weak var delegate: PlaybuzzQuizProtocol?
-    //    let myGlobal = {
-    //    print("hello")
-    //    }()
     
     public override init(frame: CGRect)
     {
@@ -62,6 +59,7 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
                                          itemAlias,
                                          showItemInfo ? "true":"false")
         webView.loadHTMLString(embedString, baseURL: URL(string:companyDomain))
+        self.sendStatisticsOfItemOpenedFromSDK()
     }
     
     override public func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?)
@@ -88,6 +86,45 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
     public func userContentController(_ userContentController: WKUserContentController,didReceive message: WKScriptMessage)
     {
         
+    }
+    
+    func sendStatisticsOfItemOpenedFromSDK()
+    {
+        var request = URLRequest(url: URL(string: "https://datacollection.playbuzz.com/PB-BD-Kinesis-Producer/")!)
+        request.httpMethod = "POST"
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let event = [
+            "eventName": "page_view",
+            "pageType": "app-sdk",
+            "parentUrl": "http://www.example.com/luda.html",
+            "sessionParentHost": "www.example.com",
+            "sessionIsMobieApp": true,
+            "articleId": "a402eeaa-92b8-4386-8191-ec5495a29ed3",
+            "sessionIsMobileWeb": true,
+            "implementation": "app-sdk",
+            "userId": "7a4da078-80ec-4596-b1c6-506f87b47def"
+        ] as [String: Any]
+        
+        request.httpBody = try! JSONSerialization.data(withJSONObject: event, options: [])
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(error)")
+                return
+            }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(response)")
+            }
+            
+            let responseString = String(data: data, encoding: .utf8)
+            print("responseString = \(responseString)")
+        }
+        task.resume()
     }
 }
 

@@ -59,8 +59,7 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
                                          itemAlias,
                                          showItemInfo ? "true":"false")
         webView.loadHTMLString(embedString, baseURL: URL(string:companyDomain))
-        self.getItemData()
-//        self.sendStatisticsOfItemOpenedFromSDK()
+        self.getItemData(itemAlias, companyDomain:companyDomain)
     }
     
     override public func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?)
@@ -88,9 +87,10 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
     {
         
     }
-    func getItemData()
+    func getItemData(_ itemAlias:String,
+                     companyDomain: String)
     {
-        if let url = URL(string: "http://rest-api-v2.playbuzz.com/v2/items?itemAlias=gigglebuzz10/can-you-name-all-20-of-these-fresh-prince-of-bel-air-characters")
+        if let url = URL(string: "http://rest-api-v2.playbuzz.com/v2/items?itemAlias=\(itemAlias)")
         {
             var request = URLRequest(url: url)
             request.httpMethod = "GET"
@@ -105,8 +105,28 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
                 {
                     if httpStatus.statusCode == 200
                     {
-                        let responseString = String(data: data, encoding: .utf8)
-                        print("responseString = \(responseString)")
+                        do {
+                            
+                            let parsedData = try JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
+                            if let payload = parsedData["payload"] as? [String:Any]
+                            {
+                                if let items = payload["items"] as? [Any]
+                                {
+                                    if items.count > 0
+                                    {
+                                        if let item = items[0] as? [String:Any]
+                                        {
+                                            let articleId = item["id"] as! String
+                                            let channelId = item["channelId"] as! String
+                                            
+                                            self.sendStatisticsOfItemOpenedFromSDK(articleId: articleId, channelId: channelId, companyDomain: companyDomain)
+                                        }
+                                    }
+                                }
+                            }
+                        } catch let error as NSError {
+                            print(error)
+                        }
                     }
                     else
                     {
@@ -118,7 +138,7 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
         }
     }
     
-    func sendStatisticsOfItemOpenedFromSDK()
+    func sendStatisticsOfItemOpenedFromSDK(articleId: String, channelId:String, companyDomain:String)
     {
         if let url = URL(string: "https://datacollection.playbuzz.com/PB-BD-Kinesis-Producer/")
         {
@@ -134,10 +154,10 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
                 "parentUrl": "http://www.example.com/luda.html",
                 "sessionParentHost": "www.example.com",
                 "sessionIsMobieApp": true,
-                "articleId": "a402eeaa-92b8-4386-8191-ec5495a29ed3",
+                "articleId": channelId,
                 "sessionIsMobileWeb": true,
                 "implementation": "app-sdk",
-                "userId": "7a4da078-80ec-4596-b1c6-506f87b47def"
+                "userId": articleId
             ] as [String: Any]
             
             request.httpBody = try! JSONSerialization.data(withJSONObject: event, options: [])

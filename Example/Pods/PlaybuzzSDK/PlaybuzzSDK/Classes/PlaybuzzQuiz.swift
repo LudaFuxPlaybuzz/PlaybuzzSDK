@@ -151,15 +151,15 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
             let event = [
                 "eventName": "page_view",
                 "pageType": "app-sdk",
-                "parentUrl": "http://www.example.com/luda.html",
-                "sessionParentHost": "www.example.com",
+                "parentUrl": companyDomain,
+                "sessionParentHost": companyDomain,
                 "sessionIsMobieApp": true,
                 "articleId": channelId,
                 "sessionIsMobileWeb": true,
                 "implementation": "app-sdk",
                 "userId": articleId
             ] as [String: Any]
-            
+
             request.httpBody = try! JSONSerialization.data(withJSONObject: event, options: [])
 
             let task = URLSession.shared.dataTask(with: request) { data, response, error in

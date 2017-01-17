@@ -126,7 +126,7 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
                     let messageComposeVC = MFMessageComposeViewController()
                     
                     messageComposeVC.body = "I saw this on Playbuzz and couldn't wait to share it with you! http:\(self.itemURLString)"
-//                    messageComposeVC.messageComposeDelegate = self
+                    messageComposeVC.messageComposeDelegate = self.delegate as! MFMessageComposeViewControllerDelegate?
                     self.delegate?.presentShareViewController(messageComposeVC)
                     
                 }

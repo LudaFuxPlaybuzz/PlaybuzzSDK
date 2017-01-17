@@ -8,8 +8,9 @@
 
 import UIKit
 import PlaybuzzSDK
+import MessageUI
 
-class ViewController: UIViewController, PlaybuzzQuizProtocol{
+class ViewController: UIViewController, PlaybuzzQuizProtocol, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate{
     
     @IBOutlet weak var playbuzzQuiz: PlaybuzzQuiz!
     @IBOutlet weak var playbuzzQuizHeight: NSLayoutConstraint!
@@ -36,6 +37,16 @@ class ViewController: UIViewController, PlaybuzzQuizProtocol{
     func presentShareViewController(_ viewController:UIViewController)
     {
         self.present(viewController, animated: true, completion: nil)
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?)
+    {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult)
+    {
+        controller.dismiss(animated: true, completion: nil)
     }
 }
 

@@ -113,6 +113,23 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
                         }
                         
                     }
+                    else if shareTarget == "twitter"
+                    {
+                        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter){
+                            let serviceSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+                            if let itemURL = URL(string: self.itemURLString)
+                            {
+                                serviceSheet.add(itemURL)
+                            }
+                            serviceSheet.setInitialText("\(self.itemTitle) @playbuzz")
+                            self.delegate?.presentShareViewController(serviceSheet)
+                        } else {
+                            let alert = UIAlertController(title: "Accounts", message: "Please login to your account to share.", preferredStyle: UIAlertControllerStyle.alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                            self.delegate?.presentShareViewController(alert)
+                        }
+                        
+                    }
                     else
                     {
                         let url = URL(string: "fb://feed")!

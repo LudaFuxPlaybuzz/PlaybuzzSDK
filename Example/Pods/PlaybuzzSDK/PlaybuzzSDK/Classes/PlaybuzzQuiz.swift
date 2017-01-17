@@ -9,6 +9,7 @@
 import UIKit
 import WebKit
 import Social
+import MessageUI
 
 public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
     
@@ -92,26 +93,19 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
         if let body = message.body as? AnyObject, let data = body["data"] as? NSDictionary, let shareTarget = data["articleSocialTarget"] as? String
         {
             print("\(shareTarget)")
-            if shareTarget == "facebook"
+            if shareTarget == "facebook" && SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook)
             {
-                if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook){
-                    let serviceSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
-                    if let itemURL = URL(string: self.itemURLString)
-                    {
-                        serviceSheet.add(itemURL)
-                    }
-                    serviceSheet.setInitialText(self.itemTitle)
-                    self.delegate?.presentShareViewController(serviceSheet)
-                } else {
-                    let alert = UIAlertController(title: "Accounts", message: "Please login to your account to share.", preferredStyle: UIAlertControllerStyle.alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                    self.delegate?.presentShareViewController(alert)
+                let serviceSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+                if let itemURL = URL(string: self.itemURLString)
+                {
+                    serviceSheet.add(itemURL)
                 }
-                
+                serviceSheet.setInitialText(self.itemTitle)
+                self.delegate?.presentShareViewController(serviceSheet)
             }
-            else if shareTarget == "twitter"
+            else if shareTarget == "twitter" && SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter)
             {
-                if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter){
+                
                     let serviceSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
                     if let itemURL = URL(string: self.itemURLString)
                     {
@@ -119,12 +113,29 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
                     }
                     serviceSheet.setInitialText("\(self.itemTitle) @playbuzz")
                     self.delegate?.presentShareViewController(serviceSheet)
-                } else {
-                    let alert = UIAlertController(title: "Accounts", message: "Please login to your account to share.", preferredStyle: UIAlertControllerStyle.alert)
+            }
+            else if (shareTarget == "facebook" ||  shareTarget == "twitter")
+            {
+                let alert = UIAlertController(title: "Accounts", message: "Please login to your account to share.", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.delegate?.presentShareViewController(alert)
+            }
+            else if (shareTarget == "sms")
+            {
+                if MFMessageComposeViewController.canSendText() {
+                    let messageComposeVC = MFMessageComposeViewController()
+                    
+                    messageComposeVC.body = "I saw this on Playbuzz and couldn't wait to share it with you! http:\(self.itemURLString)"
+//                    messageComposeVC.messageComposeDelegate = self
+                    self.delegate?.presentShareViewController(messageComposeVC)
+                    
+                }
+                else
+                {
+                    let alert = UIAlertController(title: "Your device doesn't support messaging", message: nil, preferredStyle: UIAlertControllerStyle.alert)
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                     self.delegate?.presentShareViewController(alert)
                 }
-                
             }
             else
             {

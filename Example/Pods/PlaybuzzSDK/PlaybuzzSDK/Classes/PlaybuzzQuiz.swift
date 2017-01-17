@@ -89,60 +89,53 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
     
     public func userContentController(_ userContentController: WKUserContentController,didReceive message: WKScriptMessage)
     {
-        if let body = message.body as? AnyObject
+        if let body = message.body as? AnyObject, let data = body["data"] as? NSDictionary, let shareTarget = data["articleSocialTarget"] as? String
         {
-            if let data = body["data"] as? NSDictionary
+            print("\(shareTarget)")
+            if shareTarget == "facebook"
             {
-                if let shareTarget = data["articleSocialTarget"] as? String
-                {
-                    print("\(shareTarget)")
-                    if shareTarget == "facebook"
+                if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook){
+                    let serviceSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+                    if let itemURL = URL(string: self.itemURLString)
                     {
-                        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook){
-                            let serviceSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
-                            if let itemURL = URL(string: self.itemURLString)
-                            {
-                                serviceSheet.add(itemURL)
-                            }
-                            serviceSheet.setInitialText(self.itemTitle)
-                            self.delegate?.presentShareViewController(serviceSheet)
-                        } else {
-                            let alert = UIAlertController(title: "Accounts", message: "Please login to your account to share.", preferredStyle: UIAlertControllerStyle.alert)
-                            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                            self.delegate?.presentShareViewController(alert)
-                        }
-                        
+                        serviceSheet.add(itemURL)
                     }
-                    else if shareTarget == "twitter"
+                    serviceSheet.setInitialText(self.itemTitle)
+                    self.delegate?.presentShareViewController(serviceSheet)
+                } else {
+                    let alert = UIAlertController(title: "Accounts", message: "Please login to your account to share.", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                    self.delegate?.presentShareViewController(alert)
+                }
+                
+            }
+            else if shareTarget == "twitter"
+            {
+                if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter){
+                    let serviceSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+                    if let itemURL = URL(string: self.itemURLString)
                     {
-                        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter){
-                            let serviceSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
-                            if let itemURL = URL(string: self.itemURLString)
-                            {
-                                serviceSheet.add(itemURL)
-                            }
-                            serviceSheet.setInitialText("\(self.itemTitle) @playbuzz")
-                            self.delegate?.presentShareViewController(serviceSheet)
-                        } else {
-                            let alert = UIAlertController(title: "Accounts", message: "Please login to your account to share.", preferredStyle: UIAlertControllerStyle.alert)
-                            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                            self.delegate?.presentShareViewController(alert)
-                        }
-                        
+                        serviceSheet.add(itemURL)
                     }
-                    else
-                    {
-                        let url = URL(string: "fb://feed")!
-                        if #available(iOS 10.0, *) {
-                            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                        } else {
-                            UIApplication.shared.openURL(url)
-                        }
-                    }
+                    serviceSheet.setInitialText("\(self.itemTitle) @playbuzz")
+                    self.delegate?.presentShareViewController(serviceSheet)
+                } else {
+                    let alert = UIAlertController(title: "Accounts", message: "Please login to your account to share.", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                    self.delegate?.presentShareViewController(alert)
+                }
+                
+            }
+            else
+            {
+                let url = URL(string: "fb://feed")!
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                } else {
+                    UIApplication.shared.openURL(url)
                 }
             }
         }
-        
     }
     
     func getItemData(_ itemAlias:String,

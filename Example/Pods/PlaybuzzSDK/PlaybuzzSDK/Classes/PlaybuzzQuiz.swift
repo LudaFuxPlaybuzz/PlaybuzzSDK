@@ -53,7 +53,7 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
         }
         let userID = UIDevice.current.identifierForVendor!.uuidString
         
-        let embedTamplate = "<!DOCTYPE html><html><head> <meta content=\"width=device-width\" name=\"viewport\"> <style>.pb_iframe_bottom{display:none;}.pb_top_content_container{padding-bottom: 0 !important;}</style></head><body> <script type=\"text/javascript\">window.PlayBuzzCallback=function(event){var messageDict={\"event_name\":event.eventName,data:event.data};window.webkit.messageHandlers.callbackHandler.postMessage(messageDict)}</script> <script src=\"//cdn.playbuzz.com/widget/feed.js\" type=\"text/javascript\"> </script> <div class=\"pb_feed\" data-native-id=\"%@\" data-game=\"%@\" data-recommend=false data-shares=false data-comments=false data-game-info=\"%@\" data-platform=\"iPhone\" ></div></body></html>"
+        let embedTamplate = "<!DOCTYPE html><html><head> <meta content=\"width=device-width\" name=\"viewport\"> <style>.pb_iframe_bottom{display:none;}.pb_top_content_container{padding-bottom: 0 !important;}</style></head><body> <script type=\"text/javascript\">window.PlayBuzzCallback=function(event){var messageDict={\"event_name\":event.eventName,data:event.data};window.webkit.messageHandlers.callbackHandler.postMessage(messageDict)}</script> <script src=\"//cdn.playbuzz.com/widget/feed.js\" type=\"text/javascript\"> </script> <div class=\"pb_feed\" data-native-id=\"%@\" data-game=\"%@\" data-recommend=false data-shares=true data-comments=false data-game-info=\"%@\" data-platform=\"iPhone\" ></div></body></html>"
         
         let embedString: String = String(format: embedTamplate,
                                          userID,
@@ -86,8 +86,25 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
     
     public func userContentController(_ userContentController: WKUserContentController,didReceive message: WKScriptMessage)
     {
+        if let body = message.body as? AnyObject
+        {
+            if let data = body["data"] as? NSDictionary
+            {
+                if let shareTarget = data["articleSocialTarget"] as? String
+                {
+                    print("\(shareTarget)")
+                    let url = URL(string: "fb://feed")!
+                    if #available(iOS 10.0, *) {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    } else {
+                        UIApplication.shared.openURL(url)
+                    }
+                }
+            }
+        }
         
     }
+    
     func getItemData(_ itemAlias:String,
                      companyDomain: String)
     {

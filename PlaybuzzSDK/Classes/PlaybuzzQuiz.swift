@@ -13,9 +13,6 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
     
     var webView: WKWebView!
     public weak var delegate: PlaybuzzQuizProtocol?
-    //    let myGlobal = {
-    //    print("hello")
-    //    }()
     
     public override init(frame: CGRect)
     {
@@ -31,6 +28,7 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
         
         addBehavior()
     }
+    
     func addBehavior ()
     {
         let contentController = WKUserContentController();
@@ -62,6 +60,7 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
                                          itemAlias,
                                          showItemInfo ? "true":"false")
         webView.loadHTMLString(embedString, baseURL: URL(string:companyDomain))
+        self.getItemData(itemAlias, companyDomain:companyDomain)
     }
     
     override public func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?)
@@ -88,6 +87,95 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
     public func userContentController(_ userContentController: WKUserContentController,didReceive message: WKScriptMessage)
     {
         
+    }
+    func getItemData(_ itemAlias:String,
+                     companyDomain: String)
+    {
+        if let url = URL(string: "http://rest-api-v2.playbuzz.com/v2/items?itemAlias=\(itemAlias)")
+        {
+            var request = URLRequest(url: url)
+            request.httpMethod = "GET"
+
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                guard let data = data, error == nil else {
+                    print("PlaybuzzSDK, getItemData: error=\(error)")
+                    return
+                }
+                
+                if let httpStatus = response as? HTTPURLResponse
+                {
+                    if httpStatus.statusCode == 200
+                    {
+                        do {
+                            
+                            let parsedData = try JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
+                            if let payload = parsedData["payload"] as? [String:Any]
+                            {
+                                if let items = payload["items"] as? [Any]
+                                {
+                                    if items.count > 0
+                                    {
+                                        if let item = items[0] as? [String:Any]
+                                        {
+                                            let articleId = item["id"] as! String
+                                            let channelId = item["channelId"] as! String
+                                            
+                                            self.sendStatisticsOfItemOpenedFromSDK(articleId: articleId, channelId: channelId, companyDomain: companyDomain)
+                                        }
+                                    }
+                                }
+                            }
+                        } catch let error as NSError {
+                            print(error)
+                        }
+                    }
+                    else
+                    {
+                        print("PlaybuzzSDK, getItemData: statusCode should be 200, but is \(httpStatus.statusCode). response = \(response)")
+                    }
+                }
+            }
+            task.resume()
+        }
+    }
+    
+    func sendStatisticsOfItemOpenedFromSDK(articleId: String, channelId:String, companyDomain:String)
+    {
+        if let url = URL(string: "https://datacollection.playbuzz.com/PB-BD-Kinesis-Producer/")
+        {
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.addValue("application/json", forHTTPHeaderField: "Accept")
+            
+            let event = [
+                "eventName": "page_view",
+                "pageType": "app-sdk",
+                "parentUrl": companyDomain,
+                "sessionParentHost": companyDomain,
+                "sessionIsMobieApp": true,
+                "articleId": channelId,
+                "sessionIsMobileWeb": true,
+                "implementation": "app-sdk",
+                "userId": articleId
+            ] as [String: Any]
+
+            request.httpBody = try! JSONSerialization.data(withJSONObject: event, options: [])
+
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                guard let data = data, error == nil else {
+                    print("PlaybuzzSDK, sendStatisticsOfItemOpenedFromSDK: error=\(error)")
+                    return
+                }
+                
+                if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                    print("PlaybuzzSDK, sendStatisticsOfItemOpenedFromSDK: statusCode should be 200, but is \(httpStatus.statusCode). response = \(response)")
+                    print("response = \(response)")
+                }
+            }
+            task.resume()
+        }
     }
 }
 

@@ -32,5 +32,10 @@ class ViewController: UIViewController, PlaybuzzQuizProtocol{
     {
         playbuzzQuizHeight.constant = height
     }
+    
+    func presentShareViewController(_ viewController:UIViewController)
+    {
+        self.present(viewController, animated: true, completion: nil)
+    }
 }
 

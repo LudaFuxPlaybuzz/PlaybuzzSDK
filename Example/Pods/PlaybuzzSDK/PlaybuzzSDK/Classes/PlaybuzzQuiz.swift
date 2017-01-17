@@ -8,11 +8,14 @@
 
 import UIKit
 import WebKit
+import Social
 
 public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
     
     var webView: WKWebView!
     public weak var delegate: PlaybuzzQuizProtocol?
+    var itemTitle = ""
+    var itemURLString = ""
     
     public override init(frame: CGRect)
     {
@@ -93,11 +96,31 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
                 if let shareTarget = data["articleSocialTarget"] as? String
                 {
                     print("\(shareTarget)")
-                    let url = URL(string: "fb://feed")!
-                    if #available(iOS 10.0, *) {
-                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                    } else {
-                        UIApplication.shared.openURL(url)
+                    if shareTarget == "facebook"
+                    {
+                        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook){
+                            let serviceSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+                            if let itemURL = URL(string: self.itemURLString)
+                            {
+                                serviceSheet.add(itemURL)
+                            }
+                            serviceSheet.setInitialText(self.itemTitle)
+                            self.delegate?.presentShareViewController(serviceSheet)
+                        } else {
+                            let alert = UIAlertController(title: "Accounts", message: "Please login to your account to share.", preferredStyle: UIAlertControllerStyle.alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                            self.delegate?.presentShareViewController(alert)
+                        }
+                        
+                    }
+                    else
+                    {
+                        let url = URL(string: "fb://feed")!
+                        if #available(iOS 10.0, *) {
+                            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                        } else {
+                            UIApplication.shared.openURL(url)
+                        }
                     }
                 }
             }
@@ -136,6 +159,8 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
                                         {
                                             let articleId = item["id"] as! String
                                             let channelId = item["channelId"] as! String
+                                            self.itemTitle = item["title"] as! String
+                                            self.itemURLString = item["playbuzzUrl"] as! String
                                             
                                             self.sendStatisticsOfItemOpenedFromSDK(articleId: articleId, channelId: channelId, companyDomain: companyDomain)
                                         }
@@ -201,4 +226,5 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
 public protocol PlaybuzzQuizProtocol: class
 {
     func resizePlaybuzzContainer(_ height: CGFloat)
+    func presentShareViewController(_ viewController: UIViewController)
 }

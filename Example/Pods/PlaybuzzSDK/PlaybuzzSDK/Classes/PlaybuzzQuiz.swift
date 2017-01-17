@@ -28,6 +28,7 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
         
         addBehavior()
     }
+    
     func addBehavior ()
     {
         let contentController = WKUserContentController();

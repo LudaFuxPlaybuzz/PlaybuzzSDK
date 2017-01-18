@@ -29,11 +29,13 @@ class ViewController: UIViewController, PlaybuzzQuizProtocol, MFMailComposeViewC
                                 showItemInfo: true)
     }
     
+    // MARK: - PlaybuzzQuizProtocol
     func resizePlaybuzzContainer(_ height: CGFloat)
     {
         playbuzzQuizHeight.constant = height
     }
     
+    // MARK: - MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate
     func presentShareViewController(_ viewController:UIViewController)
     {
         self.present(viewController, animated: true, completion: nil)

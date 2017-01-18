@@ -17,6 +17,7 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
     public weak var delegate: PlaybuzzQuizProtocol?
     var itemTitle = ""
     var itemURLString = ""
+    var shareTitleAndURL = ""
     
     public override init(frame: CGRect)
     {
@@ -125,7 +126,7 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
                 if MFMessageComposeViewController.canSendText() {
                     let messageComposeVC = MFMessageComposeViewController()
                     
-                    messageComposeVC.body = "I saw this on Playbuzz and couldn't wait to share it with you! http:\(self.itemURLString)"
+                    messageComposeVC.body = self.shareTitleAndURL
                     messageComposeVC.messageComposeDelegate = self.delegate as! MFMessageComposeViewControllerDelegate?
                     self.delegate?.presentShareViewController(messageComposeVC)
                     
@@ -137,13 +138,56 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
                     self.delegate?.presentShareViewController(alert)
                 }
             }
+            else if (shareTarget == "email")
+            {
+                if MFMailComposeViewController.canSendMail()
+                {
+                    let mailComposerVC = MFMailComposeViewController()
+                    mailComposerVC.mailComposeDelegate = self.delegate as! MFMailComposeViewControllerDelegate
+                    mailComposerVC.setSubject(self.itemTitle)
+                    mailComposerVC.setMessageBody(self.shareTitleAndURL, isHTML: false)
+                    
+                    self.delegate?.presentShareViewController(mailComposerVC)
+                }
+                else
+                {
+                    let alert = UIAlertController(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                    self.delegate?.presentShareViewController(alert)
+                }
+            }
+            else if (shareTarget == "Copy")
+            {
+                
+            }
             else
             {
-                let url = URL(string: "fb://feed")!
-                if #available(iOS 10.0, *) {
-                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                } else {
-                    UIApplication.shared.openURL(url)
+                let shareString =  self.itemTitle + "\n" + self.shareTitleAndURL
+                let escapedurlSchemeString = shareString.addingPercentEncoding(withAllowedCharacters: CharacterSet.alphanumerics)!
+                var urlSchemeString = ""
+                
+                switch shareTarget {
+//                case "google":
+//                    urlSchemeString = "gplus://plus.google.com/u/0/100711776131865357077"
+//                case "vk":
+//                    urlSchemeString = "vk://\(escapedurlSchemeString)"
+//                case "reddit":
+//                    urlSchemeString = "reddit://\(escapedurlSchemeString)"
+                case "tumblr":
+                    urlSchemeString = "tumblr://x-callback-url/text?body=\(escapedurlSchemeString)"
+                case "whatsapp":
+                    urlSchemeString = "whatsapp://send?text=\(escapedurlSchemeString)"
+                default:
+                    urlSchemeString = "http://www.playbuzz.com"
+                }
+                
+                if let url = URL(string: urlSchemeString)
+                {
+                    if #available(iOS 10.0, *) {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    } else {
+                        UIApplication.shared.openURL(url)
+                    }
                 }
             }
         }
@@ -182,6 +226,7 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
                                             let channelId = item["channelId"] as! String
                                             self.itemTitle = item["title"] as! String
                                             self.itemURLString = item["playbuzzUrl"] as! String
+                                            self.shareTitleAndURL = "I saw this on Playbuzz and couldn't wait to share it with you! http:\(self.itemURLString)"
                                             
                                             self.sendStatisticsOfItemOpenedFromSDK(articleId: articleId, channelId: channelId, companyDomain: companyDomain)
                                         }

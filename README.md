@@ -9,7 +9,7 @@
 
 ## Get Started
 
-The Playbuzz SDK enabled developers easily embed Playbuzz games in native apps.
+The Playbuzz SDK enabled developers easily embed Playbuzz items in native apps.
 
 ## Prerequisites
 

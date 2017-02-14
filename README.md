@@ -19,7 +19,7 @@ The Playbuzz SDK enabled developers easily embed Playbuzz items in native apps.
 
 ## Example
 
-To check out example, download the repo, open PlaybuzzSDK.xcworkspace and run the project.
+To check out the example, download the repo run the sample project.
 
 ## Installation
 
@@ -35,24 +35,7 @@ pod 'PlaybuzzSDK'
 
 ## Usage
 
-1) Drag a **UIView** into **UIScrollView** in your view controller. Then in the Custom Class section in the top-right corner, select the custom class **PlaybuzzView** as the Class for this view (make sure the module is **PlaybuzzSDK**)
-
-![view](http://i66.tinypic.com/20rskl3.png)
-
-2) Add constraints on the PlaybuzzSDK so it would properly fit your views
-
-3) Adding a reference to your PlaybuzzView in code
-
-![referance](http://i66.tinypic.com/elbp8z.png)
-![referance](http://i68.tinypic.com/210mwc5.png)
-
-4) To resolve a compilation error, add **import PlaybuzzSDK** to ViewController.swift so the compiler knows that PlaybuzzView is a valid class.
-
-5) Adding a reference to playbuzzView height constaraint 
-
-![height](http://i68.tinypic.com/211jwhz.png)
-![height](http://i63.tinypic.com/jigmsl.png)
-
+1) Add **import PlaybuzzSDK** to ViewController.swift so the compiler knows that PlaybuzzView is a valid class.
 6) Load the quiz 
 
 You'll need **itemAlies** - the url suffix of your item 
@@ -66,13 +49,15 @@ You'll need **itemAlies** - the url suffix of your item
         
         super.viewDidLoad()
         
-        let companyDomain = "http://www.example.com"
-        let userID = UIDevice.current.identifierForVendor!.uuidString
         let itemAlias = "shpaltman/10-best-commercials-for-the-olympic-games-rio-2016"
+        let companyDomain = "http://www.example.com"
+        
+        let playbuzzView = PlaybuzzView.init(frame: self.view.frame)
         
         playbuzzView.reloadItem(itemAlias,
                                 companyDomain: companyDomain,
                                 showItemInfo: true)
+        self.view.addSubview(playbuzzView)
     } 
 }
 ```
@@ -80,61 +65,10 @@ You'll need **itemAlies** - the url suffix of your item
 2. **itemAlies** - the url suffix of your item 
 3. **showItemInfo** - show or hide item title and description
 
-7) Update quiz height
-
-**Conform to PlaybuzzViewProtocol**
-
-```Swift
-class ViewController: UIViewController, PlaybuzzViewProtocol
-```
-
-and implemt the following function:
-```Swift
-func resizePlaybuzzContainer(_ height: CGFloat)
-{
-    PlaybuzzViewHeight.constant = height
-}
-```
 ### Build and run the app
 ![finished](http://i65.tinypic.com/f4phya.png)
 
 Congratulations, you've successfully made your first PlaybuzzView!
-
-## The finished code
-
-```Swift
-import UIKit
-import PlaybuzzSDK
-
-class ViewController: UIViewController, PlaybuzzViewProtocol{
-    
-    @IBOutlet weak var playbuzzView: PlaybuzzView!
-    @IBOutlet weak var playbuzzViewHeight: NSLayoutConstraint!
-    
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-        
-        self.playbuzzView.delegate = self
-     
-        let itemAlias = "shpaltman/10-best-commercials-for-the-olympic-games-rio-2016"
-        let companyDomain = "http://www.example.com"
-        
-        playbuzzView.reloadItem(itemAlias,
-                                companyDomain: companyDomain,
-                                showItemInfo: true)
-    }
-    
-    func resizePlaybuzzContainer(_ height: CGFloat)
-    {
-        playbuzzViewHeight.constant = height
-    }
-}
-```
-
-## Author
-
-Luda Fux, luda@playbuzz.com
 
 ## License
 

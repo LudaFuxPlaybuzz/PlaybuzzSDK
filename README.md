@@ -21,7 +21,7 @@ The Playbuzz SDK enabled developers easily embed Playbuzz items in native apps.
 
 To check out the example, download the repo run the sample project.
 
-## Installation
+## Usage
 
 1) Add Playbuzz SDK using CocoaPods 
 
@@ -29,26 +29,25 @@ To check out the example, download the repo run the sample project.
 pod 'PlaybuzzSDK'
 ```
 
-2) Enable html loads in the plist
- Enable **Allow Arbitrary Loads** in **App Transport Security Settings** in your Info.plist
-![plist](http://i67.tinypic.com/10hlwn8.png)
+2) Add import PlaybuzzSDK to ViewController.swift so the compiler knows that PlaybuzzView is a valid class.
+```Swift 
+import PlaybuzzSDK
+```
 
-## Usage
-
-1) Add **import PlaybuzzSDK** to ViewController.swift so the compiler knows that PlaybuzzView is a valid class.
-6) Load the quiz 
-
-You'll need **itemAlies** - the url suffix of your item 
-
-![url](http://i63.tinypic.com/1z35k7b.png)
+3) Load PlaybuzzView with embedCode and youCompanyDomain
 
 **ViewController.swift**
 
 ```Swift
-    override func viewDidLoad() {
-        
+import UIKit
+import PlaybuzzSDK
+
+class ViewController: UIViewController{
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        
+
         let itemAlias = "shpaltman/10-best-commercials-for-the-olympic-games-rio-2016"
         let companyDomain = "http://www.example.com"
         
@@ -58,12 +57,18 @@ You'll need **itemAlies** - the url suffix of your item
                                 companyDomain: companyDomain,
                                 showItemInfo: true)
         self.view.addSubview(playbuzzView)
-    } 
+    }
 }
+
+
 ```
 1. **companyDomain** - the domain configered for your compony 
 2. **itemAlies** - the url suffix of your item 
 3. **showItemInfo** - show or hide item title and description
+
+4) Enable html loads in the plist
+ Enable **Allow Arbitrary Loads** in **App Transport Security Settings** in your Info.plist
+![plist](http://i67.tinypic.com/10hlwn8.png)
 
 ### Build and run the app
 ![finished](http://i65.tinypic.com/f4phya.png)

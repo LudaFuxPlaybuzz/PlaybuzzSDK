@@ -13,7 +13,7 @@ class ViewController: UIViewController{
     
     override func viewDidLoad()
     {
-        super.viewDidLoad()
+        super.viewDidLoad() 
 
         let itemAlias = "shpaltman/10-best-commercials-for-the-olympic-games-rio-2016"
         let companyDomain = "http://www.example.com"

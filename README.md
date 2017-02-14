@@ -30,11 +30,9 @@ pod 'PlaybuzzSDK'
 ```
 
 2) Add import PlaybuzzSDK to ViewController.swift so the compiler knows that PlaybuzzView is a valid class.
-```Swift 
-import PlaybuzzSDK
-```
-
-3) Load PlaybuzzView with embedCode and youCompanyDomain
+3) Create PlaybuzzView with appropriete frame
+4) Load PlaybuzzView with embedCode and your company domain
+5) Add PlaybuzzView to your view
 
 **ViewController.swift**
 

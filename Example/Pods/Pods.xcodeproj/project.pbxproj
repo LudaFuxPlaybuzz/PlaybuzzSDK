@@ -13,7 +13,7 @@
 		AA9D5CC2C72126BB697F513D137F096F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		D241E279CC6515737A8C08D503F563E8 /* PlaybuzzSDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 327F4BABDC2C1571097C84D3DE74F059 /* PlaybuzzSDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D47B129DC2A1DF633EA16F5822742F21 /* PlaybuzzSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F6C642EFEB92B39E92696E67738A06 /* PlaybuzzSDK-dummy.m */; };
-		F90F1E4B8294DFAF17EE98381B144B37 /* PlaybuzzQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9809A523566BD247F9FDF007826464F /* PlaybuzzQuiz.swift */; };
+		F90F1E4B8294DFAF17EE98381B144B37 /* PlaybuzzView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9809A523566BD247F9FDF007826464F /* PlaybuzzView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,21 +29,21 @@
 /* Begin PBXFileReference section */
 		0038F402D976CB9438DF1BA51B8F5101 /* PlaybuzzSDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PlaybuzzSDK.xcconfig; sourceTree = "<group>"; };
 		2B7C62909EB64AD2AF34F7B2B299B31D /* Pods-PlaybuzzSDK_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PlaybuzzSDK_Example-resources.sh"; sourceTree = "<group>"; };
-		2E760FB33E15F1823FB11EB165176549 /* PlaybuzzSDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = PlaybuzzSDK.modulemap; sourceTree = "<group>"; };
+		2E760FB33E15F1823FB11EB165176549 /* PlaybuzzSDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = PlaybuzzSDK.modulemap; sourceTree = "<group>"; };
 		327F4BABDC2C1571097C84D3DE74F059 /* PlaybuzzSDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PlaybuzzSDK-umbrella.h"; sourceTree = "<group>"; };
-		355B444AF0E957E5F3422CA2F052176E /* PlaybuzzSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PlaybuzzSDK.framework; path = PlaybuzzSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		355B444AF0E957E5F3422CA2F052176E /* PlaybuzzSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PlaybuzzSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3625F7C6ACCD8A4BBCC38B965E7A435C /* Pods-PlaybuzzSDK_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PlaybuzzSDK_Example-dummy.m"; sourceTree = "<group>"; };
 		3D82D67B66B592701641761772563E85 /* Pods-PlaybuzzSDK_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PlaybuzzSDK_Example-umbrella.h"; sourceTree = "<group>"; };
 		4A8BE0E81C30AA057DF6FC8836CB56E0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DA685CE2772BE677CF9C6D646643308 /* Pods-PlaybuzzSDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PlaybuzzSDK_Example.release.xcconfig"; sourceTree = "<group>"; };
 		4E7A693D5BFBD64D582D29BB866EE456 /* Pods-PlaybuzzSDK_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PlaybuzzSDK_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		56182AD52878118FCCFE95DF7F0E97B9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		637A2A7AECF61B7998A67D01A96199EF /* Pods_PlaybuzzSDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PlaybuzzSDK_Example.framework; path = "Pods-PlaybuzzSDK_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		637A2A7AECF61B7998A67D01A96199EF /* Pods_PlaybuzzSDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlaybuzzSDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8850C125E6478C8BD5FDAAB855D4242B /* PlaybuzzSDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PlaybuzzSDK-prefix.pch"; sourceTree = "<group>"; };
-		91058095C5CF87DA16B7F7FDE751BB9B /* Pods-PlaybuzzSDK_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-PlaybuzzSDK_Example.modulemap"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		91058095C5CF87DA16B7F7FDE751BB9B /* Pods-PlaybuzzSDK_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PlaybuzzSDK_Example.modulemap"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A2F6C642EFEB92B39E92696E67738A06 /* PlaybuzzSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PlaybuzzSDK-dummy.m"; sourceTree = "<group>"; };
-		A9809A523566BD247F9FDF007826464F /* PlaybuzzQuiz.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PlaybuzzQuiz.swift; path = PlaybuzzSDK/Classes/PlaybuzzQuiz.swift; sourceTree = "<group>"; };
+		A9809A523566BD247F9FDF007826464F /* PlaybuzzView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PlaybuzzView.swift; path = PlaybuzzSDK/Classes/PlaybuzzView.swift; sourceTree = "<group>"; };
 		AFC67B4CF08F5E6DCF069C114226BBBD /* Pods-PlaybuzzSDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PlaybuzzSDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		C3CEB045D11919B006A880D74FE1DBD6 /* Pods-PlaybuzzSDK_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PlaybuzzSDK_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -135,10 +135,9 @@
 		E1EA5024165A7A84F2C16445EDEEB557 /* PlaybuzzSDK */ = {
 			isa = PBXGroup;
 			children = (
-				A9809A523566BD247F9FDF007826464F /* PlaybuzzQuiz.swift */,
+				A9809A523566BD247F9FDF007826464F /* PlaybuzzView.swift */,
 				EE519CF1BA71A6D15CDC2B49A6BCE7B7 /* Support Files */,
 			);
-			name = PlaybuzzSDK;
 			path = PlaybuzzSDK;
 			sourceTree = "<group>";
 		};
@@ -253,7 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F90F1E4B8294DFAF17EE98381B144B37 /* PlaybuzzQuiz.swift in Sources */,
+				F90F1E4B8294DFAF17EE98381B144B37 /* PlaybuzzView.swift in Sources */,
 				D47B129DC2A1DF633EA16F5822742F21 /* PlaybuzzSDK-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

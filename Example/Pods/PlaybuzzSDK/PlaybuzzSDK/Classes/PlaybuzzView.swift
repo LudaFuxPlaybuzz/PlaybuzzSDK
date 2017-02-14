@@ -1,5 +1,5 @@
 //
-//  PlaybuzzQuiz.swift
+//  PlaybuzzView.swift
 //  Pods
 //
 //  Created by Luda Fux on 11/9/16.
@@ -9,10 +9,10 @@
 import UIKit
 import WebKit
 
-public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
+public class PlaybuzzView: UIView, WKScriptMessageHandler{
     
     var webView: WKWebView!
-    public weak var delegate: PlaybuzzQuizProtocol?
+    public weak var delegate: PlaybuzzViewProtocol?
     
     public override init(frame: CGRect)
     {
@@ -40,7 +40,6 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
         webView.autoresizingMask = [.flexibleWidth,.flexibleHeight]
         webView.scrollView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
         webView.configuration.userContentController.add(self,name: "callbackHandler")
-        webView.scrollView.isScrollEnabled = false
         self.addSubview(webView)
     }
     
@@ -181,7 +180,7 @@ public class PlaybuzzQuiz: UIView, WKScriptMessageHandler{
 
 
 // MARK: - EmbededWebViewControllerProtocol
-public protocol PlaybuzzQuizProtocol: class
+public protocol PlaybuzzViewProtocol: class
 {
     func resizePlaybuzzContainer(_ height: CGFloat)
 }

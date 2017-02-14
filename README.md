@@ -35,20 +35,20 @@ pod 'PlaybuzzSDK'
 
 ## Usage
 
-1) Drag a **UIView** into **UIScrollView** in your view controller. Then in the Custom Class section in the top-right corner, select the custom class **PlaybuzzQuiz** as the Class for this view (make sure the module is **PlaybuzzSDK**)
+1) Drag a **UIView** into **UIScrollView** in your view controller. Then in the Custom Class section in the top-right corner, select the custom class **PlaybuzzView** as the Class for this view (make sure the module is **PlaybuzzSDK**)
 
 ![view](http://i66.tinypic.com/20rskl3.png)
 
 2) Add constraints on the PlaybuzzSDK so it would properly fit your views
 
-3) Adding a reference to your PlaybuzzQuiz in code
+3) Adding a reference to your PlaybuzzView in code
 
 ![referance](http://i66.tinypic.com/elbp8z.png)
 ![referance](http://i68.tinypic.com/210mwc5.png)
 
-4) To resolve a compilation error, add **import PlaybuzzSDK** to ViewController.swift so the compiler knows that PlaybuzzQuiz is a valid class.
+4) To resolve a compilation error, add **import PlaybuzzSDK** to ViewController.swift so the compiler knows that PlaybuzzView is a valid class.
 
-5) Adding a reference to playbuzzQuiz height constaraint 
+5) Adding a reference to playbuzzView height constaraint 
 
 ![height](http://i68.tinypic.com/211jwhz.png)
 ![height](http://i63.tinypic.com/jigmsl.png)
@@ -70,7 +70,7 @@ You'll need **itemAlies** - the url suffix of your item
         let userID = UIDevice.current.identifierForVendor!.uuidString
         let itemAlias = "shpaltman/10-best-commercials-for-the-olympic-games-rio-2016"
         
-        playbuzzQuiz.reloadItem(itemAlias,
+        playbuzzView.reloadItem(itemAlias,
                                 companyDomain: companyDomain,
                                 showItemInfo: true)
     } 
@@ -82,23 +82,23 @@ You'll need **itemAlies** - the url suffix of your item
 
 7) Update quiz height
 
-**Conform to PlaybuzzQuizProtocol**
+**Conform to PlaybuzzViewProtocol**
 
 ```Swift
-class ViewController: UIViewController, PlaybuzzQuizProtocol
+class ViewController: UIViewController, PlaybuzzViewProtocol
 ```
 
 and implemt the following function:
 ```Swift
 func resizePlaybuzzContainer(_ height: CGFloat)
 {
-    playbuzzQuizHeight.constant = height
+    PlaybuzzViewHeight.constant = height
 }
 ```
 ### Build and run the app
 ![finished](http://i65.tinypic.com/f4phya.png)
 
-Congratulations, you've successfully made your first PlaybuzzQuiz!
+Congratulations, you've successfully made your first PlaybuzzView!
 
 ## The finished code
 
@@ -106,28 +106,28 @@ Congratulations, you've successfully made your first PlaybuzzQuiz!
 import UIKit
 import PlaybuzzSDK
 
-class ViewController: UIViewController, PlaybuzzQuizProtocol{
+class ViewController: UIViewController, PlaybuzzViewProtocol{
     
-    @IBOutlet weak var playbuzzQuiz: PlaybuzzQuiz!
-    @IBOutlet weak var playbuzzQuizHeight: NSLayoutConstraint!
+    @IBOutlet weak var playbuzzView: PlaybuzzView!
+    @IBOutlet weak var playbuzzViewHeight: NSLayoutConstraint!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        self.playbuzzQuiz.delegate = self
+        self.playbuzzView.delegate = self
      
         let itemAlias = "shpaltman/10-best-commercials-for-the-olympic-games-rio-2016"
         let companyDomain = "http://www.example.com"
         
-        playbuzzQuiz.reloadItem(itemAlias,
+        playbuzzView.reloadItem(itemAlias,
                                 companyDomain: companyDomain,
                                 showItemInfo: true)
     }
     
     func resizePlaybuzzContainer(_ height: CGFloat)
     {
-        playbuzzQuizHeight.constant = height
+        playbuzzViewHeight.constant = height
     }
 }
 ```

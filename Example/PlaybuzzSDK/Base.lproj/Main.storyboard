@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C60b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="OuK-VP-YAr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E154a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="OuK-VP-YAr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,42 +20,11 @@
                     <view key="view" contentMode="scaleToFill" id="P0T-VP-6BM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e52-GY-yYT">
-                                <rect key="frame" x="0.0" y="10" width="375" height="740"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oxq-FD-2fw" customClass="PlaybuzzQuiz" customModule="PlaybuzzSDK">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="740"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="740" id="PcN-UK-8Uz"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Oxq-FD-2fw" secondAttribute="trailing" id="Ehm-yj-CyH"/>
-                                    <constraint firstAttribute="bottom" secondItem="Oxq-FD-2fw" secondAttribute="bottom" id="bBl-y3-X0v"/>
-                                    <constraint firstItem="Oxq-FD-2fw" firstAttribute="top" secondItem="e52-GY-yYT" secondAttribute="top" id="h1S-UU-mA7"/>
-                                    <constraint firstItem="Oxq-FD-2fw" firstAttribute="leading" secondItem="e52-GY-yYT" secondAttribute="leading" id="xF5-ya-6UX"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="Oxq-FD-2fw" firstAttribute="width" secondItem="P0T-VP-6BM" secondAttribute="width" id="2ho-AG-JEw"/>
-                            <constraint firstAttribute="trailing" secondItem="e52-GY-yYT" secondAttribute="trailing" id="9Qf-kv-3XU"/>
-                            <constraint firstItem="e52-GY-yYT" firstAttribute="top" secondItem="P0T-VP-6BM" secondAttribute="top" constant="10" id="M9x-PN-lsc"/>
-                            <constraint firstItem="e52-GY-yYT" firstAttribute="leading" secondItem="P0T-VP-6BM" secondAttribute="leading" id="agA-r9-TMm"/>
-                            <constraint firstItem="Ylg-hO-eRU" firstAttribute="top" secondItem="e52-GY-yYT" secondAttribute="bottom" id="zeY-ul-k0n"/>
-                        </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="750"/>
-                    <connections>
-                        <outlet property="playbuzzQuiz" destination="Oxq-FD-2fw" id="5s6-pM-sIx"/>
-                        <outlet property="playbuzzQuizHeight" destination="PcN-UK-8Uz" id="p32-03-bIi"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hou-7Z-8sc" sceneMemberID="firstResponder"/>
             </objects>

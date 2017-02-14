@@ -9,28 +9,21 @@
 import UIKit
 import PlaybuzzSDK
 
-class ViewController: UIViewController, PlaybuzzQuizProtocol{
-    
-    @IBOutlet weak var playbuzzQuiz: PlaybuzzQuiz!
-    @IBOutlet weak var playbuzzQuizHeight: NSLayoutConstraint!
+class ViewController: UIViewController{
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
-        self.playbuzzQuiz.delegate = self
-     
+
         let itemAlias = "shpaltman/10-best-commercials-for-the-olympic-games-rio-2016"
         let companyDomain = "http://www.example.com"
         
-        playbuzzQuiz.reloadItem(itemAlias,
+        let playbuzzView = PlaybuzzView.init(frame: self.view.frame)
+        
+        playbuzzView.reloadItem(itemAlias,
                                 companyDomain: companyDomain,
                                 showItemInfo: true)
-    }
-    
-    func resizePlaybuzzContainer(_ height: CGFloat)
-    {
-        playbuzzQuizHeight.constant = height
+        self.view.addSubview(playbuzzView)
     }
 }
 

@@ -66,9 +66,9 @@ class ViewController: UIViewController{
 
 
 ```
-1. **companyDomain** - the domain configured for your company 
-2. **itemAlies** - the url suffix of your item 
-3. **showItemInfo** - show or hide item title and description
+**companyDomain** - the domain configured for your company 
+**itemAlies** - the url suffix of your item 
+**showItemInfo** - show or hide item title and description
 
 ### Build and run the app
 ![finished](http://i65.tinypic.com/f4phya.png)

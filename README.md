@@ -21,7 +21,7 @@ The Playbuzz SDK enabled developers easily embed Playbuzz items in native apps.
 
 To check out the example, download the repo run the sample project.
 
-## Usage
+## Instalation 
 
 1) Add Playbuzz SDK using CocoaPods 
 
@@ -29,13 +29,16 @@ To check out the example, download the repo run the sample project.
 pod 'PlaybuzzSDK'
 ```
 
-2) Add import PlaybuzzSDK to ViewController.swift so the compiler knows that PlaybuzzView is a valid class.
+2) Enable html loads in the plist
+ Enable **Allow Arbitrary Loads** in **App Transport Security Settings** in your Info.plist
+![plist](http://i67.tinypic.com/10hlwn8.png)
 
-3) Create PlaybuzzView with appropriete frame
+## Usage
 
-4) Load PlaybuzzView with embedCode and your company domain
-
-5) Add PlaybuzzView to your view
+1. Add import PlaybuzzSDK to ViewController.swift so the compiler knows that PlaybuzzView is a valid class.
+2. Create PlaybuzzView with appropriate frame
+3. Load PlaybuzzView with embedCode and your company domain
+4. Add PlaybuzzView to your view
 
 **ViewController.swift**
 
@@ -63,13 +66,9 @@ class ViewController: UIViewController{
 
 
 ```
-1. **companyDomain** - the domain configered for your compony 
+1. **companyDomain** - the domain configured for your company 
 2. **itemAlies** - the url suffix of your item 
 3. **showItemInfo** - show or hide item title and description
-
-4) Enable html loads in the plist
- Enable **Allow Arbitrary Loads** in **App Transport Security Settings** in your Info.plist
-![plist](http://i67.tinypic.com/10hlwn8.png)
 
 ### Build and run the app
 ![finished](http://i65.tinypic.com/f4phya.png)

@@ -62,7 +62,7 @@ public class PlaybuzzView: UIView, WKScriptMessageHandler
                                                               showItemInfo: showItemInfo,
                                                               userID: userID)
             
-//            PlaybuzzAnalyticsManager.sendAnaliticsWithItemID(itemID, companyDomain:companyDomain)
+            PlaybuzzItemFetcher.getItemDataFromItemIDAndSendAnalitics(itemID, companyDomain:companyDomain)
         }
         else if let itemAlies = PlaybuzzEmbedParser.parseEmbedToGetItemAlies(embedCode)
         {
@@ -71,7 +71,7 @@ public class PlaybuzzView: UIView, WKScriptMessageHandler
                                                               showItemInfo: showItemInfo,
                                                               userID: userID)
             
-//            PlaybuzzAnalyticsManager.sendAnaliticsWithItemAlies(itemAlies, companyDomain:companyDomain)
+            PlaybuzzItemFetcher.getItemDataFromItemAliesAndSendAnalitics(itemAlies, companyDomain:companyDomain)
         }
         
         webView.loadHTMLString(embedStringForMobile, baseURL: URL(string:companyDomain))

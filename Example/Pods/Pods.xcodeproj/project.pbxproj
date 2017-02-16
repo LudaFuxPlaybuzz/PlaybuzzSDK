@@ -81,8 +81,8 @@
 			children = (
 				739CF0C6F003C8803B3F045381DDB234 /* PlaybuzzView.swift */,
 				8503C6AD1E55AAAC00E1CCDD /* PlaybuzzEmbedParser.swift */,
-				8503C6AF1E55AAF600E1CCDD /* PlaybuzzAnalyticsManager.swift */,
 				8503C6B11E55AB9400E1CCDD /* PlaybuzzItemFetcher.swift */,
+				8503C6AF1E55AAF600E1CCDD /* PlaybuzzAnalyticsManager.swift */,
 				60D13EF43C10EFD833788D97FBC524D9 /* Support Files */,
 			);
 			path = PlaybuzzSDK;

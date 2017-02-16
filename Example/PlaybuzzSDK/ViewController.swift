@@ -15,14 +15,14 @@ class ViewController: UIViewController{
     {
         super.viewDidLoad() 
 
-        let itemAlias = "shpaltman/10-best-commercials-for-the-olympic-games-rio-2016"
+        let embedCode = "<script type=\"text/javascript\" src=\"//cdn.playbuzz.com/widget/feed.js\"></script><div class=\"pb_feed\" data-embed-by=\"bcf88815-8496-421d-89ad-76793fdcd387\" data-item=\"7885f470-9bf5-468b-8eff-1c1ac7f7738a\" ></div>"
         let companyDomain = "http://www.example.com"
         
         let playbuzzView = PlaybuzzView.init(frame: self.view.frame)
         
-        playbuzzView.reloadItem(itemAlias,
-                                companyDomain: companyDomain,
-                                showItemInfo: true)
+        playbuzzView.loadItem(embedCode,
+                              companyDomain: companyDomain,
+                              showItemInfo: true)
         self.view.addSubview(playbuzzView)
     }
 }

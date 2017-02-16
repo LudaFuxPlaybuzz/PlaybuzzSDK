@@ -25,7 +25,6 @@ public class PlaybuzzView: UIView, WKScriptMessageHandler{
     {
         super.init(coder: aDecoder)
         
-        
         addBehavior()
     }
     
@@ -43,23 +42,44 @@ public class PlaybuzzView: UIView, WKScriptMessageHandler{
         self.addSubview(webView)
     }
     
-    public func reloadItem(_ itemAlias:String,
+    public func loadItem(_ embedCode:String,
                            companyDomain: String,
                            showItemInfo:Bool)
     {
         if webView.isLoading {
             webView.stopLoading()
         }
+        
+        var embedStringForMobile = String()
+        
         let userID = UIDevice.current.identifierForVendor!.uuidString
         
-        let embedTamplate = "<!DOCTYPE html><html><head> <meta content=\"width=device-width\" name=\"viewport\"> <style>.pb_iframe_bottom{display:none;}.pb_top_content_container{padding-bottom: 0 !important;}</style></head><body> <script type=\"text/javascript\">window.PlayBuzzCallback=function(event){var messageDict={\"event_name\":event.eventName,data:event.data};window.webkit.messageHandlers.callbackHandler.postMessage(messageDict)}</script> <script src=\"//cdn.playbuzz.com/widget/feed.js\" type=\"text/javascript\"> </script> <div class=\"pb_feed\" data-native-id=\"%@\" data-game=\"%@\" data-recommend=false data-shares=false data-comments=false data-game-info=\"%@\" data-platform=\"iPhone\" ></div></body></html>"
+        if let itemID = self.parseEmbedToGetItemID(embedCode)
+        {
+            embedStringForMobile = self.embedStringWithItemID(itemID,
+                                                              companyDomain: companyDomain,
+                                                              showItemInfo: showItemInfo,
+                                                              userID: userID)
+            
+            self.sendAnalitics(itemID, companyDomain:companyDomain)
+        }
+        
+        webView.loadHTMLString(embedStringForMobile, baseURL: URL(string:companyDomain))
+        
+    }
+    
+    func embedStringWithItemID(_ itemID: String,
+                               companyDomain: String,
+                               showItemInfo:Bool,
+                               userID: String) -> String
+    {
+        let embedTamplate = "<!DOCTYPE html><html><head> <meta content=\"width=device-width\" name=\"viewport\"> <style>.pb_iframe_bottom{display:none;}.pb_top_content_container{padding-bottom: 0 !important;}</style></head><body> <script type=\"text/javascript\">window.PlayBuzzCallback=function(event){var messageDict={\"event_name\":event.eventName,data:event.data};window.webkit.messageHandlers.callbackHandler.postMessage(messageDict)}</script> <script src=\"//cdn.playbuzz.com/widget/feed.js\" type=\"text/javascript\"> </script> <div class=\"pb_feed\" data-native-id=\"%@\" data-item=\"%@\" data-recommend=false data-shares=false data-comments=false data-game-info=\"%@\" data-platform=\"iPhone\" ></div></body></html>"
         
         let embedString: String = String(format: embedTamplate,
                                          userID,
-                                         itemAlias,
+                                         itemID,
                                          showItemInfo ? "true":"false")
-        webView.loadHTMLString(embedString, baseURL: URL(string:companyDomain))
-        self.getItemData(itemAlias, companyDomain:companyDomain)
+        return embedString
     }
     
     override public func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?)
@@ -87,10 +107,12 @@ public class PlaybuzzView: UIView, WKScriptMessageHandler{
     {
         
     }
-    func getItemData(_ itemAlias:String,
+    
+    func sendAnalitics(_ itemID:String,
                      companyDomain: String)
     {
-        if let url = URL(string: "http://rest-api-v2.playbuzz.com/v2/items?itemAlias=\(itemAlias)")
+        
+        if let url = URL(string: "http://rest-api-v2.playbuzz.com/v2/items?id=\(itemID)")
         {
             var request = URLRequest(url: url)
             request.httpMethod = "GET"
@@ -136,6 +158,33 @@ public class PlaybuzzView: UIView, WKScriptMessageHandler{
             }
             task.resume()
         }
+    }
+    
+    func parseEmbedToGetItemID(_ embedCode:String) -> String?
+    {
+        
+        let embedCodSeperatedByItemID = embedCode.components(separatedBy: "data-item=\"")
+        
+        if embedCodSeperatedByItemID.count > 1
+        {
+            var dataItemWithSufux: String = embedCodSeperatedByItemID[1]
+        
+            let itemID = dataItemWithSufux.components(separatedBy: "\"")[0]
+            return itemID
+        }
+        else
+        {
+            let embedCodSeperatedByItemAlies = embedCode.components(separatedBy: "data-game=\"")
+            
+            if embedCodSeperatedByItemID.count > 1
+            {
+                var dataItemWithSufux: String = embedCodSeperatedByItemID[1]
+                
+                let itemID = dataItemWithSufux.components(separatedBy: "\"")[0]
+                return itemID
+            }
+        }
+        return nil
     }
     
     func sendStatisticsOfItemOpenedFromSDK(articleId: String, channelId:String, companyDomain:String)

@@ -72,11 +72,6 @@ class ViewController: UIViewController{
 
 **showItemInfo** - show or hide item title and description
 
-### Build and run the app
-![finished](http://i65.tinypic.com/f4phya.png)
-
-Congratulations, you've successfully made your first PlaybuzzView!
-
 ## License
 
 PlaybuzzSDK is available under the MIT license. See the LICENSE file for more info.

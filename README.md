@@ -1,6 +1,5 @@
 ![playbuzz logo](http://i68.tinypic.com/55o84j.png)
 
-[![Version](https://img.shields.io/cocoapods/v/PlaybuzzSDK.svg)](http://cocoapods.org/pods/PlaybuzzSDK)
 [![Support](https://img.shields.io/badge/contact-LudaFux-brightgreen.svg)](mailto:luda@playbuzz.com)
 [![Swift 3 compatible](https://img.shields.io/badge/language-Swift-yellowgreen.svg)](https://developer.apple.com/swift)
 ![Platform iOS](https://img.shields.io/badge/platform-iOS-yellow.svg)
@@ -31,6 +30,7 @@ pod 'PlaybuzzSDK'
 
 2) Enable html loads in the plist
  Enable **Allow Arbitrary Loads** in **App Transport Security Settings** in your Info.plist
+
 ![plist](http://i67.tinypic.com/10hlwn8.png)
 
 ## Usage
@@ -71,6 +71,12 @@ class ViewController: UIViewController{
 **itemAlies** - the url suffix of your item 
 
 **showItemInfo** - show or hide item title and description
+
+## Congratulations! 
+
+**You've embedded you're first Playbuzz quiz**
+
+![screenshot](http://i65.tinypic.com/r10wev.png)
 
 ## License
 

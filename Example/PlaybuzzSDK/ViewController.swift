@@ -15,7 +15,7 @@ class ViewController: UIViewController{
     {
         super.viewDidLoad() 
 
-        let embedCode = "<script type=\"text/javascript\" src=\"//cdn.playbuzz.com/widget/feed.js\"></script><div class=\"pb_feed\" data-embed-by=\"bcf88815-8496-421d-89ad-76793fdcd387\" data-item=\"7885f470-9bf5-468b-8eff-1c1ac7f7738a\" ></div>"
+        let embedCode = "<script type=\"text/javascript\" src=\"//cdn.playbuzz.com/widget/feed.js\"></script><div class=\"pb_feed\" data-embed-by=\"a1169349-e14e-44aa-b7de-6ba13538c4ec\" data-item=\"eb4ea8d9-4b0b-4bea-a5c8-769459871c4b\"></div>"
         
         let companyDomain = "http://www.example.com"
         

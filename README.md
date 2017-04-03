@@ -61,6 +61,7 @@ class ViewController: UIViewController{
         playbuzzView.loadItem(embedCode,
                               companyDomain: companyDomain,
                               showItemInfo: true)
+                              
         self.view.addSubview(playbuzzView)
     }
 }
